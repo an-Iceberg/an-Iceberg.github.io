@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('fonts/RobotoSlab-VariableFont_wght.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Slab', serif;
+}
+
+body {
+  --light-text: #fff;
+  --dark-text: #000;
+  --black: #000;
+  --dark-purple: #3d2645;
+  --byzantium: #832161;
+  --cerise: #da4167;
+  --ghost-white: #f0eff4;
+  --green-blue: #306bac;
+  --cornflower-blue: #6f9ceb;
+  --baby-blue-eyes: #98b9f2;
+  --medium-pruple: #918ef4;
+  font-size: 16px;
+  color: var(--light-text);
+  background: var(--black);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 100px 20vw;
+}
+
+.spacer {
+  aspect-ratio: 1920/300;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.layer1 {
+  background-image: url('svg/layer1.svg');
+}
+.layer2 {
+  background-image: url('svg/layer2.svg');
+}
+.layer3 {
+  background-image: url('svg/layer3.svg');
+}
+.layer4 {
+  background-image: url('svg/layer4.svg');
+}
+.layer5 {
+  background-image: url('svg/layer5.svg');
+}
+.layer6 {
+  background-image: url('svg/layer6.svg');
+}
+.layer7 {
+  background-image: url('svg/layer7.svg');
+}
+.layer8 {
+  background-image: url('svg/layer8.svg');
+}
+
+.black {
+  background: var(--black);
+}
+.dark-purple {
+  background: var(--dark-purple);
+}
+.byzantium {
+  background: var(--byzantium);
+}
+.cerise {
+  background: var(--cerise);
+}
+.ghost-white {
+  background: var(--ghost-white);
+  color: var(--dark-text);
+}
+.green-blue {
+  background: var(--green-blue);
+}
+.cornflower-blue {
+  background: var(--cornflower-blue);
+}
+.baby-blue-eyes {
+  background: var(--baby-blue-eyes);
+}
+.medium-purple {
+  background: var(--medium-pruple);
+}
