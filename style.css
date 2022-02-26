@@ -34,6 +34,22 @@ body {
   font-size: 40px;
 }
 
+.circles-bg {
+  aspect-ratio: 1920/400;
+  background: url('svg/circles-bg.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.blob {
+  aspect-ratio: 900/450;
+  background-image: url('svg/blob.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -41,6 +57,11 @@ section {
   justify-content: center;
   min-height: 400px;
   padding: 100px 20vw;
+}
+
+.buttons {
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .spacer {
@@ -80,7 +101,7 @@ section {
   background: var(--black);
 }
 .dark-purple {
-  background: var(--dark-purple);
+  /* background: var(--dark-purple); */
 }
 .byzantium {
   background: var(--byzantium);
