@@ -28,7 +28,8 @@ body {
   --medium-pruple: #918ef4;
   font-size: 16px;
   color: var(--light-text);
-  background: var(--black);
+  /* background: var(--black); */
+  background: wheat;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -38,17 +39,45 @@ body {
   font-size: 40px;
 }
 
+.dark-text {
+  color: var(--dark-text);
+}
+
+.website-title {
+  height: 700px;
+  align-items: center;
+  justify-content: start;
+  gap: 30px;
+  padding: 50px 30px;
+}
+
+.showcase {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 30px;
+}
+
+.showcase > * {
+  flex-grow: 1;
+}
+
+.showcase1 {
+  background: coral;
+}
+
+.showcase2 {
+  background: blueviolet;
+}
+
+.showcase3 {
+  background: purple;
+}
+
 .circles-bg {
   aspect-ratio: 1920/400;
   background: url('svg/circles-bg.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.blob {
-  aspect-ratio: 900/450;
-  background-image: url('svg/blob.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -231,7 +260,7 @@ section {
 
 .spacer {
   aspect-ratio: 1920/300;
-  width: 100%;
+  width: 110%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
