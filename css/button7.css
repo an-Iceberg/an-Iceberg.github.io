@@ -1,0 +1,57 @@
+.button7-container {
+  position: relative;
+  transform-style: preserve-3d;
+
+  /* Not the best solution */
+  width: 83.5px;
+  height: 31px;
+}
+
+.button7-container * {
+  transform-style: preserve-3d;
+}
+
+.button7-container:is(:hover, :focus) .button7-front {
+  transform: rotateY(180deg);
+}
+
+.button7-container:is(:hover, :focus) .button7-back {
+  transform: rotateY(0deg);
+}
+
+.button7-front, .button7-back {
+  padding: 5px 10px;
+  position: absolute;
+  inset: 0;
+  transition: all 1s;
+  backface-visibility: hidden;
+}
+
+.button7-front {
+  color: var(--light-text);
+  background: var(--byzantium);
+  transform: rotateY(0deg);
+}
+
+.button7-front-text {
+  transform: translateZ(10px);
+}
+
+.button7-back {
+  transform: rotateY(-180deg);
+  color: var(--dark-text);
+  background: var(--ghost-white);
+}
+
+/* Border */
+.button7-back::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid #000;
+  transform: translateZ(30px);
+}
+
+.button7-back-text {
+  transform: translateZ(10px);
+}

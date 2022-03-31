@@ -1,0 +1,11 @@
+.button6 {
+  padding: 5px 10px;
+  outline: 0px solid var(--byzantium);
+  outline-offset: 5px;
+  transition: all .3s;
+}
+
+.button6:is(:hover, :focus) {
+  outline-offset: -3px;
+  outline: 5px solid #fff;
+}

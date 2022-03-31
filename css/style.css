@@ -1,0 +1,168 @@
+/* The CSS variables MUST always be at the very top */
+@import url('css-variables.css');
+
+@import url('button1.css');
+@import url('button2.css');
+@import url('button3.css');
+@import url('button4.css');
+@import url('button5.css');
+@import url('button6.css');
+@import url('button7.css');
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('../fonts/RobotoSlab-VariableFont_wght.ttf');
+}
+
+:not(head, html) {
+  display: flow-root;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Slab', serif;
+}
+
+:root {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+.h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.dark-text {
+  color: var(--dark-text);
+}
+
+.website-title {
+  height: 700px;
+  align-items: center;
+  justify-content: start;
+  gap: 30px;
+  padding: 50px 30px;
+}
+
+.showcase {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 30px;
+}
+
+.showcase > * {
+  flex-grow: 1;
+}
+
+.showcase1 {
+  background: coral;
+  border: 1px solid #000;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase1 > div {
+  width: 100px;
+  height: 100px;
+}
+
+.circles-bg {
+  aspect-ratio: 1920/400;
+  background: url('../svg/circles-bg.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 100px 20vw;
+}
+
+.buttons {
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button {
+  position: relative;
+}
+
+.spacer {
+  aspect-ratio: 1920/300;
+  width: 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.layer1 {
+  background-image: url('../svg/layer1.svg');
+}
+.layer2 {
+  background-image: url('../svg/layer2.svg');
+}
+.layer3 {
+  background-image: url('../svg/layer3.svg');
+}
+.layer4 {
+  background-image: url('../svg/layer4.svg');
+}
+.layer5 {
+  background-image: url('../svg/layer5.svg');
+}
+.layer6 {
+  background-image: url('../svg/layer6.svg');
+}
+.layer7 {
+  background-image: url('../svg/layer7.svg');
+}
+.layer8 {
+  background-image: url('../svg/layer8.svg');
+}
+
+.black {
+  background: var(--black);
+}
+.dark-purple {
+  background: var(--dark-purple);
+}
+.byzantium {
+  background: var(--byzantium);
+}
+.cerise {
+  background: var(--cerise);
+}
+.ghost-white {
+  background: var(--ghost-white);
+  color: var(--dark-text);
+}
+.green-blue {
+  background: var(--green-blue);
+}
+.cornflower-blue {
+  background: var(--cornflower-blue);
+}
+.baby-blue-eyes {
+  background: var(--baby-blue-eyes);
+}
+.medium-purple {
+  background: var(--medium-pruple);
+}
