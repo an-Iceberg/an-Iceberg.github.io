@@ -9,6 +9,8 @@
 @import url('button6.css');
 @import url('button7.css');
 
+@import url('cards.css');
+
 @font-face {
   font-family: 'Roboto Slab';
   src: url('../fonts/RobotoSlab-VariableFont_wght.ttf');
@@ -51,35 +53,13 @@
   flex-grow: 1;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 100%;
   gap: 30px;
 }
 
 .showcase > * {
-  flex-grow: 1;
-}
-
-.showcase1 {
-  background: coral;
-  border: 1px solid #000;
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.showcase1 > div {
-  width: 100px;
-  height: 100px;
-}
-
-.circles-bg {
-  aspect-ratio: 1920/400;
-  background: url('../svg/circles-bg.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  /* flex-grow: 1; */
 }
 
 section {

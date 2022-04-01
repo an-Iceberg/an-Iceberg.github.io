@@ -1,0 +1,77 @@
+.card {
+  outline: 5px solid var(--dark-purple);
+  outline-offset: -10px;
+  background: var(--cornflower-blue);
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card1, .card2, .card3 {
+  cursor: pointer;
+  position: relative;
+  max-width: 33.33%;
+  overflow: hidden;
+}
+
+:is(.card1, .card2, .card3)::after {
+  padding: 10px;
+  position: absolute;
+  transition: all .3s;
+}
+
+.card1::after {
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+}
+
+.card1:is(:hover, :focus)::after {
+  top: 0;
+  bottom: 0;
+}
+
+.card2::after{
+  top: 0;
+  left: -100%;
+  bottom: 0;
+  right: 100%;
+}
+
+.card2:is(:hover, :focus)::after {
+  right: 0;
+  left: 0;
+}
+
+.card3::after {
+  top: -100%;
+  left: -100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.card3:is(:hover, :focus)::after {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.card1::after {
+  content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam corrupti nihil iusto perferendis, sed laudantium reiciendis ipsam perspiciatis molestiae omnis eveniet laborum, alias suscipit vitae unde dolorem et ducimus voluptatibus quas aliquid eius maiores in repellat veniam? Placeat, reprehenderit repellendus? Officiis deserunt rem in optio. Sit asperiores temporibus tenetur explicabo blanditiis provident rem amet nihil at. Aperiam cupiditate recusandae nobis?';
+  background: var(--medium-pruple);
+}
+
+.card2::after {
+  content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam distinctio inventore corrupti odio ratione ipsum ipsa quibusdam deserunt. Sit pariatur velit nemo! Culpa laboriosam soluta fugit obcaecati esse quisquam est quod. Consequatur culpa placeat, id nemo maiores delectus maxime odio laudantium, sint harum optio pariatur! Consequatur cum illo cumque voluptatibus minus ex excepturi in omnis eligendi, iste minima corporis unde!';
+  background: var(--green-blue);
+}
+
+.card3::after {
+  content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium reiciendis est, voluptatibus et aliquid voluptatum delectus? Eius soluta, suscipit eum eos ullam ipsum dicta voluptate maxime? Assumenda architecto accusamus asperiores laborum dolores molestiae eos iure soluta inventore accusantium deleniti eveniet dolorem, laudantium fuga fugit facere iusto tempora quod libero, tenetur placeat reprehenderit. Veniam architecto impedit obcaecati doloribus natus, magni vitae!';
+  background: var(--byzantium);
+}
