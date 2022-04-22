@@ -13,7 +13,7 @@
 .card1, .card2, .card3 {
   cursor: pointer;
   position: relative;
-  max-width: 33.33%;
+  width: calc(100% / 3);
   overflow: hidden;
 }
 

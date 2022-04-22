@@ -1,5 +1,5 @@
 .button1::before {
-  content: '『';
+  content: '{';
   position: absolute;
   transform: translateX(49px);
   opacity: 0;
@@ -8,14 +8,13 @@
 
 .button1:is(:hover, :focus)::before {
   opacity: 1;
-  transform: translateX(-22px) translateY(-3px);
-  font-size: 20px;
+  transform: translateX(-8px);
 }
 
 .button1::after {
-  content: '』';
+  content: '}';
   position: absolute;
-  transform: translateX(-67px);
+  transform: translateX(-53px);
   opacity: 0;
   transition: all .3s;
 }
@@ -23,5 +22,4 @@
 .button1:is(:hover, :focus)::after {
   opacity: 1;
   transform: translateX(2px);
-  font-size: 20px;
 }
