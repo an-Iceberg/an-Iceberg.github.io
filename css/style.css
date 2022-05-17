@@ -80,14 +80,14 @@ a {
   background-color: var(--green-blue);
   width: 66.66%;
   z-index: 2;
-  clip-path: polygon(0 0, 100px 0, 100px 400px, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100px 0, 100px 450px, 100% 100%, 0 100%);
 }
 
 .top-curve-3 {
   background-color: var(--byzantium);
   width: 100%;
   z-index: 1;
-  clip-path: polygon(0 0, 150px 0, 150px 300px, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 150px 0, 150px 400px, 100% 100%, 0 100%);
 }
 
 .top-curve-1, .top-curve-2, .top-curve-3 {
