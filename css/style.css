@@ -63,31 +63,37 @@ a {
 }
 
 .curves {
+  --height: 60%;
+  --width: 100px;
+  --step: 25px;
+  background-image: url('../images/20210115_160155.jpg');
+  background-size: calc(100% - (var(--width) * 3));
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
   position: relative;
   width: 100%;
-  height: 600px;
-  --height: 40%;
+  height: 100vh;
 }
 
 .top-curve-1 {
   background-color: var(--medium-purple);
   width: 33.33%;
   z-index: 3;
-  clip-path: polygon(0 0, 50px 0, 50px 500px, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, var(--width) 0, var(--width) calc(var(--height) + (var(--step) * 2)), 100% 100%, 0 100%);
 }
 
 .top-curve-2 {
   background-color: var(--green-blue);
   width: 66.66%;
   z-index: 2;
-  clip-path: polygon(0 0, 100px 0, 100px 450px, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, calc(var(--width) * 2) 0, calc(var(--width) * 2) calc(var(--height) + var(--step)), 100% 100%, 0 100%);
 }
 
 .top-curve-3 {
   background-color: var(--byzantium);
   width: 100%;
   z-index: 1;
-  clip-path: polygon(0 0, 150px 0, 150px 400px, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, calc(var(--width) * 3) 0, calc(var(--width) * 3) var(--height), 100% 100%, 0 100%);
 }
 
 .top-curve-1, .top-curve-2, .top-curve-3 {
