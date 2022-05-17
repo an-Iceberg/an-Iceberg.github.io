@@ -1,6 +1,5 @@
 .card {
-  border: 2px solid var(--black);
-  border-radius: 10px;
+  border-radius: 20px;
   background: var(--cornflower-blue);
   display: flex;
   flex-direction: column;
@@ -11,52 +10,33 @@
   width: calc(100% / 3);
   overflow: hidden;
   padding: 0 40px;
-  /*box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.5);*/
+  transition: all .3s;
 }
 
 :is(.card1, .card2, .card3)::after {
   padding: 10px;
   position: absolute;
   transition: all .3s;
-  border-radius: 7px;
+}
+
+:is(.card1, .card2, .card3):is(:hover, :focus) {
+  border-radius: 0;
+}
+
+:is(.card1, .card2, .card3):is(:hover, :focus)::after {
+  inset: 0 0 0 0;
 }
 
 .card1::after {
-  top: 100%;
-  left: 0;
-  right: 0;
-  bottom: -100%;
-}
-
-.card1:is(:hover, :focus)::after {
-  top: 0;
-  bottom: 0;
+  inset: 100% 0 -100% 0;
 }
 
 .card2::after{
-  top: 0;
-  left: -100%;
-  bottom: 0;
-  right: 100%;
-}
-
-.card2:is(:hover, :focus)::after {
-  right: 0;
-  left: 0;
+  inset: 0 100% 0 -100%;
 }
 
 .card3::after {
-  top: -100%;
-  left: -100%;
-  bottom: 100%;
-  right: 100%;
-}
-
-.card3:is(:hover, :focus)::after {
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  inset: -100% 100% 100% -100%;
 }
 
 .card1::after {

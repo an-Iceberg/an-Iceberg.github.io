@@ -67,7 +67,10 @@ a {
   --curve-width: 100px;
   --curve-step: 25px;
   background-image: url('../images/20210115_160155.jpg');
-  background-size: calc(100% - (var(--curve-width) * 3));
+  /* bg-attachment seems to cause the image to grow inexplicably */
+  background-attachment: fixed;
+  /* HACK: the - 80px are there to counter-balance the growth cause by bg-attachment */
+  background-size: calc(100% - (var(--curve-width) * 3) - 80px);
   background-repeat: no-repeat;
   background-position: 100% 50%;
   position: relative;
