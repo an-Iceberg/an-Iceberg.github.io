@@ -1,26 +1,24 @@
 .card {
-  outline: 5px solid var(--dark-purple);
-  outline-offset: -10px;
+  border: 2px solid var(--black);
+  border-radius: 10px;
   background: var(--cornflower-blue);
-  padding: 30px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.card1, .card2, .card3 {
   cursor: pointer;
   position: relative;
   width: calc(100% / 3);
   overflow: hidden;
+  padding: 0 40px;
+  /*box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.5);*/
 }
 
 :is(.card1, .card2, .card3)::after {
   padding: 10px;
   position: absolute;
   transition: all .3s;
+  border-radius: 7px;
 }
 
 .card1::after {
@@ -63,7 +61,7 @@
 
 .card1::after {
   content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam corrupti nihil iusto perferendis, sed laudantium reiciendis ipsam perspiciatis molestiae omnis eveniet laborum, alias suscipit vitae unde dolorem et ducimus voluptatibus quas aliquid eius maiores in repellat veniam? Placeat, reprehenderit repellendus? Officiis deserunt rem in optio. Sit asperiores temporibus tenetur explicabo blanditiis provident rem amet nihil at. Aperiam cupiditate recusandae nobis?';
-  background: var(--medium-pruple);
+  background: var(--medium-purple);
 }
 
 .card2::after {

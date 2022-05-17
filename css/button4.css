@@ -11,7 +11,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: var(--medium-pruple);
+  background: var(--medium-purple);
   transform: scale(0);
   transform-origin: top right;
   transition: transform .3s;

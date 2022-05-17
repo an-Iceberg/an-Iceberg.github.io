@@ -9,10 +9,10 @@ body {
   --green-blue: #306bac;
   --cornflower-blue: #6f9ceb;
   --baby-blue-eyes: #98b9f2;
-  --medium-pruple: #918ef4;
+  --medium-purple: #918ef4;
   --navbar-width: 5rem;
   color: var(--light-text);
-  /* background: var(--black); */
+  background-image: linear-gradient(to right, #8000ff, coral);
   background: wheat;
   /* background: moccasin;
   background: navajowhite;
