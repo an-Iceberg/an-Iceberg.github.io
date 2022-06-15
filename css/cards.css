@@ -13,43 +13,34 @@
   transition: all .3s;
 }
 
-:is(.card1, .card2, .card3)::after {
+.card::after {
   padding: 10px;
   position: absolute;
   transition: all .3s;
 }
 
-:is(.card1, .card2, .card3):is(:hover, :focus) {
+.card:is(:hover, :focus) {
   border-radius: 0;
 }
 
-:is(.card1, .card2, .card3):is(:hover, :focus)::after {
+.card:is(:hover, :focus)::after {
   inset: 0 0 0 0;
 }
 
 .card1::after {
   inset: 100% 0 -100% 0;
-}
-
-.card2::after{
-  inset: 0 100% 0 -100%;
-}
-
-.card3::after {
-  inset: -100% 100% 100% -100%;
-}
-
-.card1::after {
   content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam corrupti nihil iusto perferendis, sed laudantium reiciendis ipsam perspiciatis molestiae omnis eveniet laborum, alias suscipit vitae unde dolorem et ducimus voluptatibus quas aliquid eius maiores in repellat veniam? Placeat, reprehenderit repellendus? Officiis deserunt rem in optio. Sit asperiores temporibus tenetur explicabo blanditiis provident rem amet nihil at. Aperiam cupiditate recusandae nobis?';
   background: var(--medium-purple);
 }
 
 .card2::after {
+  inset: 0 100% 0 -100%;
   content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam distinctio inventore corrupti odio ratione ipsum ipsa quibusdam deserunt. Sit pariatur velit nemo! Culpa laboriosam soluta fugit obcaecati esse quisquam est quod. Consequatur culpa placeat, id nemo maiores delectus maxime odio laudantium, sint harum optio pariatur! Consequatur cum illo cumque voluptatibus minus ex excepturi in omnis eligendi, iste minima corporis unde!';
   background: var(--green-blue);
 }
 
 .card3::after {
+  inset: -100% 100% 100% -100%;
   content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium reiciendis est, voluptatibus et aliquid voluptatum delectus? Eius soluta, suscipit eum eos ullam ipsum dicta voluptate maxime? Assumenda architecto accusamus asperiores laborum dolores molestiae eos iure soluta inventore accusantium deleniti eveniet dolorem, laudantium fuga fugit facere iusto tempora quod libero, tenetur placeat reprehenderit. Veniam architecto impedit obcaecati doloribus natus, magni vitae!';
   background: var(--byzantium);
 }

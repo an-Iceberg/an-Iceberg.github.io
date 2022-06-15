@@ -62,50 +62,6 @@ a {
   background-image: linear-gradient(to right, var(--medium-purple) 0% 33.33%, var(--green-blue) 33.33% 66.66%, var(--byzantium) 66.66% 100%);
 }
 
-.curves {
-  --curve-height: 60%;
-  --curve-width: 100px;
-  --curve-step: 25px;
-  background-image: url('../images/20210115_160155.jpg');
-  /* bg-attachment seems to cause the image to grow inexplicably */
-  background-attachment: fixed;
-  /* HACK: the - 80px are there to counter-balance the growth cause by bg-attachment */
-  background-size: calc(100% - (var(--curve-width) * 3) - 80px);
-  background-repeat: no-repeat;
-  background-position: 100% 50%;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-.top-curve-1 {
-  background-color: var(--medium-purple);
-  width: 33.33%;
-  z-index: 3;
-  clip-path: polygon(0 0, var(--curve-width) 0, var(--curve-width) calc(var(--curve-height) + (var(--curve-step) * 2)), 100% 100%, 0 100%);
-}
-
-.top-curve-2 {
-  background-color: var(--green-blue);
-  width: 66.66%;
-  z-index: 2;
-  clip-path: polygon(0 0, calc(var(--curve-width) * 2) 0, calc(var(--curve-width) * 2) calc(var(--curve-height) + var(--curve-step)), 100% 100%, 0 100%);
-}
-
-.top-curve-3 {
-  background-color: var(--byzantium);
-  width: 100%;
-  z-index: 1;
-  clip-path: polygon(0 0, calc(var(--curve-width) * 3) 0, calc(var(--curve-width) * 3) var(--curve-height), 100% 100%, 0 100%);
-}
-
-.top-curve-1, .top-curve-2, .top-curve-3 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-}
-
 .showcase {
   flex-grow: 1;
   display: flex;

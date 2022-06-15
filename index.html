@@ -67,34 +67,6 @@
 
   <main>
 
-    <div class="curves">
-      <div class="top-curve-1"></div>
-      <div class="top-curve-2"></div>
-      <div class="top-curve-3"></div>
-    </div>
-
-    <section class="website-header-section">
-
-      <div class="showcase">
-        <div class="card card1">
-          <h2>Titel</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, sunt incidunt. In libero dicta numquam hic est, nesciunt possimus corrupti.</p>
-        </div>
-
-        <div class="card card2">
-          <h2>Noch ein Titel</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis optio molestias natus at aliquam delectus voluptatem quos! Aperiam fugiat facere, repellat atque libero laudantium qui impedit saepe tempora sit voluptas?</p>
-          <p></p>
-        </div>
-
-        <div class="card card3">
-          <h2>Ein weiterer Titel</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsa laudantium, rem quae, optio doloremque tempora obcaecati suscipit, maiores perferendis quibusdam vel cumque quod delectus.</p>
-          <p></p>
-        </div>
-      </div>
-    </section>
-
     <div class="spacer layer1"></div>
 
     <section class="dark-purple">
@@ -130,6 +102,15 @@
     </section>
 
   </main>
+
+  <script defer src="">
+    document.querySelector(".button7-container").addEventListener("pointerdown", (event) => {
+      event.preventDefault()
+      event.stopPropagation()
+
+      console.log("button 7 has been touched");
+    })
+  </script>
 
 </body>
 </html>
