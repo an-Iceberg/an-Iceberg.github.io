@@ -1,0 +1,28 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-color: #000000;
+  font-size: 1em;
+
+  :not(script, ul, ol, li) {
+    display: flow-root;
+    padding: 0;
+    margin: 0;
+  }
+
+  main {
+    background-color: turquoise;
+    width: min(100% - 2em, 70%);
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+
+    h1 {
+      font-size: 3em;
+      width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
