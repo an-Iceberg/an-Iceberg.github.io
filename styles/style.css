@@ -2,71 +2,69 @@
   font-family: "Cheboyga";
   src: url("../fonts/Cheboyga.ttf") format("truetype");
 }
-body {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  background-color: #000000;
-  font-size: 1em;
-}
-body * {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font: 1rem "Cheboyga", serif;
 }
-body :not(script, ul, ol, li) {
+
+:not(html, head, body, script, ul, ol, li) {
   display: flow-root;
 }
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #000000;
+}
 body main {
-  background-color: indigo;
-  width: min(100% - 2em, 70%);
+  background-image: linear-gradient(to bottom, indigo 25%, coral 85%);
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
   height: 100%;
 }
-body main h1 {
+body main .content {
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/skyline.png");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  body main .content {
+    background-size: 50%;
+  }
+}
+@media (max-width: 550px) {
+  body main .content {
+    background-size: contain;
+  }
+}
+body main .content .title {
   font-size: 5rem;
-  color: turquoise;
+  color: cyan;
   width: max-content;
   margin-left: auto;
   margin-right: auto;
 }
-body main div {
+@media (max-width: 500px) {
+  body main .content .title {
+    font-size: 3.5rem;
+  }
+}
+body main .content .banner {
   font-size: 1.5rem;
   background-color: fuchsia;
+  color: indigo;
   text-align: center;
-}
-body main button {
-  font-size: 1.5rem;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1em;
-  padding: 0.625em 1.25em;
-  background-color: #fff;
-  border: none;
-  border-radius: 0;
-  transform: skewX(-15deg);
-  transform-style: preserve-3d;
-}
-body main button::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: -7px;
-  right: -7px;
-  background-color: red;
-  transform: translateZ(-1px);
-}
-body main button:active {
-  background-color: #aaa;
-  color: #fff;
-}
-body main button:active::after {
-  background-color: darkred;
+  width: min(530px, 100%);
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
