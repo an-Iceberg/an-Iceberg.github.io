@@ -2,29 +2,52 @@
   font-family: "Cheboyga";
   src: url("../fonts/Cheboyga.ttf") format("truetype");
 }
+:root {
+  scroll-behavior: smooth;
+  --cyan: #00ffff;
+  --magenta: #ff00ff;
+  --indigo-bg: #4b0082cc;
+}
+
+:not(html, head, body, style, script, ul, ol, li, svg, path) {
+  display: flow-root;
+}
+
+::selection {
+  background-color: var(--cyan);
+  color: indigo;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font: 1rem "Cheboyga", serif;
 }
-
-:root {
-  scroll-behavior: smooth;
-}
-
-:not(html, head, body, script, ul, ol, li) {
-  display: flow-root;
+* ::after, * ::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: #000000;
+  min-height: 100vh;
 }
 body main {
-  background-image: linear-gradient(to bottom, indigo 25%, coral 85%);
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, indigo 30%, coral 70%);
   background-attachment: fixed;
 }
-body main .content {
+body main .mountains {
+  background-image: url("/images/mountains.png");
+  background-size: 101% auto;
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+}
+body main .mountains .city {
+  min-height: 100vh;
   background-image: url("/images/skyline.png");
   background-repeat: repeat-x;
   background-position: bottom;
@@ -34,53 +57,65 @@ body main .content {
   flex-direction: column;
   align-items: center;
   padding: 0 0.5em 1.5em 0.5em;
+  --content-width: 1000px;
+  --spacing: 1em;
 }
 @media screen and (max-width: 1000px) {
-  body main .content {
+  body main .mountains .city .city {
     background-size: 50%;
   }
 }
 @media screen and (max-width: 550px) {
-  body main .content {
+  body main .mountains .city .city {
     background-size: contain;
   }
 }
-body main .content .title {
+body main .mountains .city .title {
   font-size: 5rem;
-  color: cyan;
+  color: var(--cyan);
+  text-align: center;
   width: max-content;
-  margin: 0 0 0.5em 0;
+  margin: 0 0 0.3em 0;
+  text-shadow: 0 0 10px var(--cyan), 0 0 20px var(--cyan), 0 0 30px var(--cyan), 0 0 40px var(--cyan);
 }
 @media (max-width: 500px) {
-  body main .content .title {
+  body main .mountains .city .title {
     font-size: 3.5rem;
+    width: 100%;
   }
 }
-body main .content .banner {
+body main .mountains .city .banner {
   font-size: 1.5rem;
-  background-color: fuchsia;
-  color: indigo;
+  padding: 0.5em 0;
   text-align: center;
-  width: min(530px, 100%);
+  width: 500px;
   border-radius: 10px;
-  margin-bottom: 1.5em;
+  margin-bottom: var(--spacing);
+  color: indigo;
+  background-color: var(--indigo-bg);
+  border: 1px solid var(--magenta);
+  text-shadow: 0 0 5px var(--magenta), 0 0 10px var(--magenta), 0 0 15px var(--magenta), 0 0 20px var(--magenta);
+  box-shadow: 0 0 5px 0 var(--magenta) inset, 0 0 10px 0 var(--magenta) inset, 0 0 15px 0 var(--magenta) inset, 0 0 20px 0 var(--magenta) inset, 0 0 5px 0 var(--magenta), 0 0 10px 0 var(--magenta), 0 0 15px 0 var(--magenta), 0 0 20px 0 var(--magenta);
 }
 @media screen and (max-width: 530px) {
-  body main .content .banner {
-    border-radius: 0;
+  body main .mountains .city .banner {
+    width: 100%;
   }
 }
-body main .content .long-text {
-  max-width: 530px;
-  color: cyan;
+body main .mountains .city p {
+  text-align: justify;
+  max-width: var(--content-width);
+  color: var(--cyan);
   background-color: rgba(75, 0, 130, 0.8);
   padding: 0.5em;
   border-radius: 10px;
 }
-body main .content hr {
-  width: min(530px, 100%);
-  border: 1px solid magenta;
-  margin: 1.875em 0;
+body main .mountains .city hr {
+  font-size: 1.5rem;
+  width: min(var(--content-width), 100%);
+  margin: var(--spacing) 0;
+  border: 1px solid var(--magenta);
+  box-shadow: 0 0 5px 0 var(--magenta), 0 0 10px 0 var(--magenta), 0 0 15px 0 var(--magenta), 0 0 20px 0 var(--magenta);
 }
 
 /*# sourceMappingURL=style.css.map */

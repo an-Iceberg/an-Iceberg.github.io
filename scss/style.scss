@@ -3,88 +3,154 @@
   src: url("../fonts/Cheboyga.ttf") format("truetype");
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font: 1rem "Cheboyga", serif;
-}
-
 :root {
   scroll-behavior: smooth;
+  --cyan: #00ffff;
+  --magenta: #ff00ff;
+  --indigo-bg: #4b0082cc;
 }
 
-:not(html, head, body, script, ul, ol, li) {
+:not(html, head, body, style, script, ul, ol, li, svg, path) {
   display: flow-root;
 }
 
+::selection {
+  background-color: var(--cyan);
+  color: indigo;
+}
+
+@mixin zero-padding-margin {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {
+  @include zero-padding-margin();
+  font: 1rem "Cheboyga", serif;
+
+  ::after, ::before {
+    @include zero-padding-margin();
+  }
+}
+
+// TODO: implement parallax
+// TODO: find images for clouds and stars
+// TODO: fix the backgrounds and the media queries
 body {
   background-color: #000000;
+  min-height: 100vh; // dbg
 
   // This serves as the sky
   main {
-    background-image: linear-gradient(to bottom, indigo 25%, coral 85%);
+    min-height: 100vh; // dbg
+    background-image: linear-gradient(to bottom, indigo 30%, coral 70%);
     background-attachment: fixed;
 
-    // This holds the city as the background
-    .content {
-      background-image: url("/images/skyline.png");
-      background-repeat: repeat-x;
+    .mountains {
+      background-image: url("/images/mountains.png");
+      background-size: 101% auto; // width height
       background-position: bottom;
-      background-size: 30%;
+      background-repeat: repeat-x;
       background-attachment: fixed;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 0.5em 1.5em 0.5em;
 
-      @media screen and (max-width: 1000px) {
-        background-size: 50%;
-      }
+      // This holds the city as the background
+      .city {
+        min-height: 100vh; // dbg
+        background-image: url("/images/skyline.png");
+        background-repeat: repeat-x;
+        background-position: bottom;
+        background-size: 30%;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0.5em 1.5em 0.5em;
+        --content-width: 1000px;
+        --spacing: 1em;
 
-      @media screen and (max-width: 550px) {
-        background-size: contain;
-      }
-
-      .title {
-        font-size: 5rem;
-        color: cyan;
-        width: max-content;
-        margin: 0 0 0.5em 0;
-        // TODO: add text glow, so it looks like neon
-
-        @media (max-width: 500px) {
-          font-size: 3.5rem;
+        @media screen and (max-width: 1000px) {
+          .city {
+            background-size: 50%;
+          }
         }
-      }
 
-      .banner {
-        font-size: 1.5rem;
-        background-color: fuchsia;
-        color: indigo;
-        text-align: center;
-        width: min(530px, 100%);
-        border-radius: 10px;
-        margin-bottom: 1.5em;
-        // TODO: add text glow, so it looks like neon (and remove left and right borders for mobile view)
+        @media screen and (max-width: 550px) {
+          .city {
+            background-size: contain;
+          }
+        }
+
+        .title {
+          font-size: 5rem;
+          color: var(--cyan);
+          text-align: center;
+          width: max-content;
+          margin: 0 0 0.3em 0;
+          text-shadow:
+            0 0 10px var(--cyan),
+            0 0 20px var(--cyan),
+            0 0 30px var(--cyan),
+            0 0 40px var(--cyan);
+
+          @media (max-width: 500px) {
+            font-size: 3.5rem;
+            width: 100%;
+          }
+        }
+
+        .banner {
+          font-size: 1.5rem;
+          padding: 0.5em 0;
+          text-align: center;
+          width: 500px;
+          border-radius: 10px;
+          margin-bottom: var(--spacing);
+          color: indigo;
+          background-color: var(--indigo-bg);
+          border: 1px solid var(--magenta);
+          text-shadow:
+            0 0 5px var(--magenta),
+            0 0 10px var(--magenta),
+            0 0 15px var(--magenta),
+            0 0 20px var(--magenta);
+          box-shadow:
+            0 0 5px 0 var(--magenta) inset,
+            0 0 10px 0 var(--magenta) inset,
+            0 0 15px 0 var(--magenta) inset,
+            0 0 20px 0 var(--magenta) inset,
+            0 0 5px 0 var(--magenta),
+            0 0 10px 0 var(--magenta),
+            0 0 15px 0 var(--magenta),
+            0 0 20px 0 var(--magenta);
+        }
 
         @media screen and (max-width: 530px) {
-          border-radius: 0;
+          .banner {
+            width: 100%;
+          }
         }
-      }
 
-      .long-text {
-        max-width: 530px;
-        color: cyan;
-        background-color: #4b0082cc;
-        padding: 0.5em;
-        border-radius: 10px;
-      }
+        p {
+          text-align: justify;
+          max-width: var(--content-width);
+          color: var(--cyan);
+          background-color: #4b0082cc;
+          padding: 0.5em;
+          border-radius: 10px;
+        }
 
-      hr {
-        width: min(530px, 100%);
-        border: 1px solid magenta;
-        margin: 1.875em 0;
+        hr {
+          font-size: 1.5rem;
+          width: min(var(--content-width), 100%);
+          margin: var(--spacing) 0;
+          border: 1px solid var(--magenta);
+          box-shadow:
+            0 0 5px 0 var(--magenta),
+            0 0 10px 0 var(--magenta),
+            0 0 15px 0 var(--magenta),
+            0 0 20px 0 var(--magenta);
+        }
       }
     }
   }
