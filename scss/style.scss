@@ -115,6 +115,8 @@ body {
           background-image: linear-gradient(to right, white, transparent);
         }
 
+        // TODO: generate these using a foreach loop and a list or map
+        // TODO: use vw instead of px for positioning
         &:nth-child(1) {
           left: 0px;
           animation-delay: 0s;
