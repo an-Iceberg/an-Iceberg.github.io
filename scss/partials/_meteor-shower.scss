@@ -1,0 +1,79 @@
+@use "sass:math";
+@use "../variables";
+
+@mixin meteor-shower {
+  // TODO: add color to the meteors
+  $meteor-size: 2px;
+  $meteor-width: 40px;
+
+  .meteors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+
+    .meteor {
+      top: -35px;
+      left: 0;
+      position: absolute;
+      width: 300px;
+      height: $meteor-size;
+      border-radius: $meteor-size;
+      background-image: linear-gradient(to right, white, transparent);
+      animation: meteor-shower 6s linear infinite forwards;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        width: $meteor-width;
+        height: $meteor-size;
+        background-image: linear-gradient(to right, transparent, white, transparent);
+      }
+
+      &::before {
+        transform: translateX(calc($meteor-width / -2)) rotate(45deg);
+      }
+
+      &::after {
+        transform: translateX(calc($meteor-width / -2)) rotate(-45deg);
+      }
+
+      @keyframes meteor-shower {
+        0% {
+          opacity: 1;
+          transform: rotate(225deg) translateX(100px);
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: rotate(225deg) translateX(-1000px);
+        }
+      }
+
+      $meteor-positions: (
+        // TODO: this should go from -20 to 30 and 30 to 80
+        -20vw, -10vw, 0vw, 8vw, 15vw, 17vw, 21vw, 26vw, 37vw, 45vw,
+        53vw, 59vw, 62vw, 65vw, 69vw, 74vw, 78vw, 81vw, 85vw, 90vw);
+
+      $meteor-colors: (red, cyan, magenta, orange, deeppink, yellow, hotpink, lime, darkorchid, cornflowerblue, crimson, coral, darkcyan, darkmagenta, deepskyblue, salmon, dodgerblue, gold, mediumvioletred, mediumaquamarine);
+
+      @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+          left: nth($meteor-positions, $i);
+          animation-delay: random(9000)+ms;
+          animation-duration: (random(4000) + 2000ms);
+
+          background-image: linear-gradient(to right, nth($meteor-colors, $i), transparent);
+
+          &::before, &::after {
+            background-image: linear-gradient(to right, transparent, nth($meteor-colors, $i), transparent);
+          }
+        }
+      }
+    }
+  }
+}

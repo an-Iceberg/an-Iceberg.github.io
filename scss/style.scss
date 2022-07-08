@@ -1,19 +1,12 @@
+@use "partials";
+@use "mixins";
+@use "variables";
+
 // TODO: split SCSS into multiple files
 @font-face {
   font-family: "Cheboyga";
   src: url("../fonts/Cheboyga.ttf") format("truetype");
 }
-
-$neon-green: #39ff14;
-$indigo-bg: #4b0082cc;
-
-$title: (
-  "K": (red,         orange,      $neon-green, magenta,     cyan),
-  "a": (cyan,        magenta,     red,         $neon-green, orange),
-  "z": (orange,      red,         magenta,     cyan,        $neon-green),
-  "u": (magenta,     $neon-green, cyan,        orange,      red),
-  "l": ($neon-green, cyan,        orange,      red,         magenta)
-);
 
 :root {
   scroll-behavior: smooth;
@@ -34,26 +27,6 @@ $title: (
   box-sizing: border-box;
 }
 
-@mixin text-shadow($start, $step, $color) {
-  text-shadow:
-    0 0 ($start + (0 * $step)) $color,
-    0 0 ($start + (1 * $step)) $color,
-    0 0 ($start + (2 * $step)) $color,
-    0 0 ($start + (3 * $step)) $color;
-}
-
-@mixin box-shadow($start, $step, $color) {
-  box-shadow:
-    0 0 ($start + (0 * $step)) 0 $color inset,
-    0 0 ($start + (1 * $step)) 0 $color inset,
-    0 0 ($start + (2 * $step)) 0 $color inset,
-    0 0 ($start + (3 * $step)) 0 $color inset,
-    0 0 ($start + (0 * $step)) 0 $color,
-    0 0 ($start + (1 * $step)) 0 $color,
-    0 0 ($start + (2 * $step)) 0 $color,
-    0 0 ($start + (3 * $step)) 0 $color;
-}
-
 * {
   @include zero-padding-margin();
   font: 1rem "Cheboyga", serif;
@@ -67,7 +40,7 @@ $title: (
 // TODO: fix the backgrounds and the media queries
 body {
   background-color: #000000;
-  background-image: linear-gradient(to bottom, navy, indigo 15% 25%, coral 55%);
+  background-image: linear-gradient(to bottom, navy, indigo 20% 35%, coral 55%);
   background-attachment: fixed;
 
   main {
@@ -81,208 +54,8 @@ body {
     perspective: 10px;
     position: relative;
 
-    .meteors {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-
-      // TODO: add color to the meteors
-      .meteor {
-        top: -20px;
-        left: 0;
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: #fff;
-        border-radius: 50%;
-        box-shadow:
-          0 0 0 4px #ffffffcc,
-          0 0 0 8px #ffffff55,
-          0 0 0 20px #ffffff1a;
-        animation: meteor-shower 6s linear infinite forwards;
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 300px;
-          height: 4px;
-          border-radius: 4px;
-          background-image: linear-gradient(to right, white, transparent);
-        }
-
-        // TODO: generate these using a foreach loop and a list or map
-        // TODO: use vw instead of px for positioning
-        &:nth-child(1) {
-          left: 0px;
-          animation-delay: 0s;
-          animation-duration: 5s;
-        }
-
-        &:nth-child(2) {
-          left: 300px;
-          animation-delay: 1s;
-          animation-duration: 4s;
-        }
-
-        &:nth-child(3) {
-          left: 400px;
-          animation-delay: 6s;
-          animation-duration: 3s;
-        }
-
-        &:nth-child(4) {
-          left: 550px;
-          animation-delay: 7s;
-          animation-duration: 5s;
-        }
-
-        &:nth-child(5) {
-          left: 775px;
-          animation-delay: 9s;
-          animation-duration: 3s;
-        }
-
-        &:nth-child(6) {
-          left: 900px;
-          animation-delay: 14s;
-          animation-duration: 4.5s;
-        }
-
-        &:nth-child(7) {
-          left: 1000px;
-          animation-delay: 2s;
-          animation-duration: 5.5s;
-        }
-
-        &:nth-child(8) {
-          left: 1200px;
-          animation-delay: 21s;
-          animation-duration: 3.5s;
-        }
-
-        &:nth-child(9) {
-          left: 1500px;
-          animation-delay: 3s;
-          animation-duration: 2.5s;
-        }
-
-        &:nth-child(10) {
-          left: 1600px;
-          animation-delay: 28s;
-        }
-      }
-    }
-
-    header.parallax-background {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      transform-style: preserve-3d;
-      z-index: -1;
-
-      & > * {
-        position: absolute;
-        object-fit: cover;
-        max-width: 100%;
-        max-height: 100%;
-      }
-
-      // TODO: put this on top of nearly all images
-      .title {
-        // width: max-content;
-        // height: max-content;
-        display: flex;
-        font-size: 7rem;
-        gap: 0.4em;
-        text-align: center;
-        top: -80vh;
-        // * Consider sliding the title in from the top
-        transform: translateZ(-30px) translateY(150vh) scale(0);
-        animation: title-slide-in 2s ease-out 0.5s forwards;
-      }
-
-      .title span {
-        font-size: 7rem;
-        z-index: 5;
-      }
-
-      $letters: K, a, z, u, l;
-
-      @for $i from 1 through 5 {
-        .title span:nth-child(#{$i}) {
-          animation: nth($letters, $i) 15s ease-in-out 0s infinite forwards;
-        }
-      }
-
-      .starship {
-        // transform: translateZ(-10px) translateX(1200px) translateY(-700px) scale(2);
-        width: 60px;
-        animation: starship 10s linear 0s infinite forwards;
-      }
-
-      // .shooting-star {
-      //   transform: translateZ(-10px) translateX(-1200px) translateY(-700px) scale(2);
-      //   width: 100px;
-      // }
-
-      .clouds {
-        transform: translateZ(-5px) scale(1.5);
-        display: flex;
-        top: 20vh;
-        width: 100%;
-
-        img {
-          width: 33.33%;
-        }
-      }
-
-      .dark-mountains {
-        transform: translateX(-6px) translateZ(-7px) scale(1.7);
-        width: 100%;
-        bottom: 15vh;
-      }
-
-      .mountains {
-        transform: translateX(-5px) translateZ(-6px) scale(1.6);
-        width: 100%;
-        bottom: 15vh;
-      }
-
-      .city {
-        transform: translateX(-2px) translateZ(-3px) scale(1.3);
-        display: flex;
-        width: 100%;
-        bottom: 10vh;
-
-        img {
-          width: 50%;
-        }
-      }
-
-      .city-with-colors {
-        display: flex;
-        width: 100%;
-        bottom: 0;
-
-        img {
-          width: 25%;
-        }
-      }
-
-      .cover {
-        transform: translateZ(-10px) scale(2);
-        background-image: linear-gradient(to bottom, transparent 0% 75%, #0a426e 75% 100%);
-        width: 100%;
-        height: 100%;
-      }
-    }
+    @include partials.meteor-shower;
+    @include partials.parallax;
 
     .content {
       background-color: navy;
@@ -299,7 +72,7 @@ body {
         text-align: center;
         width: max-content;
         margin: 0 0 0.3em 0;
-        @include text-shadow(10px, 10px, cyan);
+        @include mixins.text-shadow(10px, 10px, cyan);
 
         &::before {
           content: '☄️ ';
@@ -329,15 +102,11 @@ body {
         margin-bottom: $spacing;
         // color: indigo;
         color: magenta;
-        background-color: $indigo-bg;
+        background-color: variables.$indigo-bg;
         border: 1px solid magenta;
-        @include text-shadow(5px, 5px, fuchsia);
-        @include box-shadow(5px, 5px, magenta);
+        @include mixins.text-shadow(5px, 5px, fuchsia);
+        @include mixins.box-shadow(5px, 5px, magenta);
       }
-
-      // @media screen and (max-width: 530px) {
-      //   width: 100%;
-      // }
 
       p {
         text-align: justify;
@@ -353,72 +122,8 @@ body {
         width: min($content-width, 100%);
         margin: $spacing 0;
         border: 1px solid magenta;
-        @include box-shadow(5px, 5px, fuchsia)
+        @include mixins.box-shadow(5px, 5px, fuchsia)
       }
-    }
-  }
-}
-
-@keyframes meteor-shower {
-  0% {
-    opacity: 1;
-    transform: rotate(225deg) translateX(100px);
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(225deg) translateX(-1000px);
-    opacity: 0;
-  }
-}
-
-@keyframes starship {
-  0% {
-    transform: translateZ(-10px) translateX(600px) translateY(-100px) scale(2);
-  }
-  60% {
-    transform: translateZ(-10px) translateX(600px) translateY(-100px) scale(2);
-  }
-  100% {
-    transform: translateZ(-10px) translateX(1500px) translateY(-1000px) scale(2);
-  }
-}
-
-@keyframes title-slide-in {
-  0% {
-    transform: translateZ(-30px) translateY(150vh) scale(0);
-  }
-  100% {
-    transform: translateZ(-30px) translateY(0) scale(4);
-  }
-}
-
-@each $letter, $colors in $title {
-  @keyframes #{$letter} {
-    0% {
-      color: nth($colors, 1);
-      @include text-shadow(10px, 10px, nth($colors, 1));
-    }
-    20% {
-      color: nth($colors, 2);
-      @include text-shadow(10px, 10px, nth($colors, 2));
-    }
-    40% {
-      color: nth($colors, 3);
-      @include text-shadow(10px, 10px, nth($colors, 3));
-    }
-    60% {
-      color: nth($colors, 4);
-      @include text-shadow(10px, 10px, nth($colors, 4));
-    }
-    80% {
-      color: nth($colors, 5);
-      @include text-shadow(10px, 10px, nth($colors, 5));
-    }
-    100% {
-      color: nth($colors, 1);
-      @include text-shadow(10px, 10px, nth($colors, 1));
     }
   }
 }

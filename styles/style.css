@@ -30,7 +30,7 @@
 
 body {
   background-color: #000000;
-  background-image: linear-gradient(to bottom, navy, indigo 15% 25%, coral 55%);
+  background-image: linear-gradient(to bottom, navy, indigo 20% 35%, coral 55%);
   background-attachment: fixed;
 }
 body main {
@@ -51,74 +51,220 @@ body main .meteors {
   z-index: -1;
 }
 body main .meteors .meteor {
-  top: -20px;
+  top: -35px;
   left: 0;
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.8), 0 0 0 8px rgba(255, 255, 255, 0.3333333333), 0 0 0 20px rgba(255, 255, 255, 0.1019607843);
+  width: 300px;
+  height: 2px;
+  border-radius: 2px;
+  background-image: linear-gradient(to right, white, transparent);
   animation: meteor-shower 6s linear infinite forwards;
 }
-body main .meteors .meteor::before {
+body main .meteors .meteor::before, body main .meteors .meteor::after {
   content: "";
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 300px;
-  height: 4px;
-  border-radius: 4px;
-  background-image: linear-gradient(to right, white, transparent);
+  width: 40px;
+  height: 2px;
+  background-image: linear-gradient(to right, transparent, white, transparent);
+}
+body main .meteors .meteor::before {
+  transform: translateX(-20px) rotate(45deg);
+}
+body main .meteors .meteor::after {
+  transform: translateX(-20px) rotate(-45deg);
+}
+@keyframes meteor-shower {
+  0% {
+    opacity: 1;
+    transform: rotate(225deg) translateX(100px);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(225deg) translateX(-1000px);
+  }
 }
 body main .meteors .meteor:nth-child(1) {
-  left: 0px;
-  animation-delay: 0s;
-  animation-duration: 5s;
+  left: -20vw;
+  animation-delay: 8349ms;
+  animation-duration: 4542ms;
+  background-image: linear-gradient(to right, red, transparent);
+}
+body main .meteors .meteor:nth-child(1)::before, body main .meteors .meteor:nth-child(1)::after {
+  background-image: linear-gradient(to right, transparent, red, transparent);
 }
 body main .meteors .meteor:nth-child(2) {
-  left: 300px;
-  animation-delay: 1s;
-  animation-duration: 4s;
+  left: -10vw;
+  animation-delay: 3322ms;
+  animation-duration: 4097ms;
+  background-image: linear-gradient(to right, cyan, transparent);
+}
+body main .meteors .meteor:nth-child(2)::before, body main .meteors .meteor:nth-child(2)::after {
+  background-image: linear-gradient(to right, transparent, cyan, transparent);
 }
 body main .meteors .meteor:nth-child(3) {
-  left: 400px;
-  animation-delay: 6s;
-  animation-duration: 3s;
+  left: 0vw;
+  animation-delay: 2109ms;
+  animation-duration: 5245ms;
+  background-image: linear-gradient(to right, magenta, transparent);
+}
+body main .meteors .meteor:nth-child(3)::before, body main .meteors .meteor:nth-child(3)::after {
+  background-image: linear-gradient(to right, transparent, magenta, transparent);
 }
 body main .meteors .meteor:nth-child(4) {
-  left: 550px;
-  animation-delay: 7s;
-  animation-duration: 5s;
+  left: 8vw;
+  animation-delay: 6343ms;
+  animation-duration: 5035ms;
+  background-image: linear-gradient(to right, orange, transparent);
+}
+body main .meteors .meteor:nth-child(4)::before, body main .meteors .meteor:nth-child(4)::after {
+  background-image: linear-gradient(to right, transparent, orange, transparent);
 }
 body main .meteors .meteor:nth-child(5) {
-  left: 775px;
-  animation-delay: 9s;
-  animation-duration: 3s;
+  left: 15vw;
+  animation-delay: 7518ms;
+  animation-duration: 3634ms;
+  background-image: linear-gradient(to right, deeppink, transparent);
+}
+body main .meteors .meteor:nth-child(5)::before, body main .meteors .meteor:nth-child(5)::after {
+  background-image: linear-gradient(to right, transparent, deeppink, transparent);
 }
 body main .meteors .meteor:nth-child(6) {
-  left: 900px;
-  animation-delay: 14s;
-  animation-duration: 4.5s;
+  left: 17vw;
+  animation-delay: 277ms;
+  animation-duration: 5315ms;
+  background-image: linear-gradient(to right, yellow, transparent);
+}
+body main .meteors .meteor:nth-child(6)::before, body main .meteors .meteor:nth-child(6)::after {
+  background-image: linear-gradient(to right, transparent, yellow, transparent);
 }
 body main .meteors .meteor:nth-child(7) {
-  left: 1000px;
-  animation-delay: 2s;
-  animation-duration: 5.5s;
+  left: 21vw;
+  animation-delay: 5152ms;
+  animation-duration: 2314ms;
+  background-image: linear-gradient(to right, hotpink, transparent);
+}
+body main .meteors .meteor:nth-child(7)::before, body main .meteors .meteor:nth-child(7)::after {
+  background-image: linear-gradient(to right, transparent, hotpink, transparent);
 }
 body main .meteors .meteor:nth-child(8) {
-  left: 1200px;
-  animation-delay: 21s;
-  animation-duration: 3.5s;
+  left: 26vw;
+  animation-delay: 8651ms;
+  animation-duration: 2639ms;
+  background-image: linear-gradient(to right, lime, transparent);
+}
+body main .meteors .meteor:nth-child(8)::before, body main .meteors .meteor:nth-child(8)::after {
+  background-image: linear-gradient(to right, transparent, lime, transparent);
 }
 body main .meteors .meteor:nth-child(9) {
-  left: 1500px;
-  animation-delay: 3s;
-  animation-duration: 2.5s;
+  left: 37vw;
+  animation-delay: 8136ms;
+  animation-duration: 3904ms;
+  background-image: linear-gradient(to right, darkorchid, transparent);
+}
+body main .meteors .meteor:nth-child(9)::before, body main .meteors .meteor:nth-child(9)::after {
+  background-image: linear-gradient(to right, transparent, darkorchid, transparent);
 }
 body main .meteors .meteor:nth-child(10) {
-  left: 1600px;
-  animation-delay: 28s;
+  left: 45vw;
+  animation-delay: 5188ms;
+  animation-duration: 5769ms;
+  background-image: linear-gradient(to right, cornflowerblue, transparent);
+}
+body main .meteors .meteor:nth-child(10)::before, body main .meteors .meteor:nth-child(10)::after {
+  background-image: linear-gradient(to right, transparent, cornflowerblue, transparent);
+}
+body main .meteors .meteor:nth-child(11) {
+  left: 53vw;
+  animation-delay: 8214ms;
+  animation-duration: 3854ms;
+  background-image: linear-gradient(to right, crimson, transparent);
+}
+body main .meteors .meteor:nth-child(11)::before, body main .meteors .meteor:nth-child(11)::after {
+  background-image: linear-gradient(to right, transparent, crimson, transparent);
+}
+body main .meteors .meteor:nth-child(12) {
+  left: 59vw;
+  animation-delay: 1856ms;
+  animation-duration: 5241ms;
+  background-image: linear-gradient(to right, coral, transparent);
+}
+body main .meteors .meteor:nth-child(12)::before, body main .meteors .meteor:nth-child(12)::after {
+  background-image: linear-gradient(to right, transparent, coral, transparent);
+}
+body main .meteors .meteor:nth-child(13) {
+  left: 62vw;
+  animation-delay: 996ms;
+  animation-duration: 5451ms;
+  background-image: linear-gradient(to right, darkcyan, transparent);
+}
+body main .meteors .meteor:nth-child(13)::before, body main .meteors .meteor:nth-child(13)::after {
+  background-image: linear-gradient(to right, transparent, darkcyan, transparent);
+}
+body main .meteors .meteor:nth-child(14) {
+  left: 65vw;
+  animation-delay: 2287ms;
+  animation-duration: 2037ms;
+  background-image: linear-gradient(to right, darkmagenta, transparent);
+}
+body main .meteors .meteor:nth-child(14)::before, body main .meteors .meteor:nth-child(14)::after {
+  background-image: linear-gradient(to right, transparent, darkmagenta, transparent);
+}
+body main .meteors .meteor:nth-child(15) {
+  left: 69vw;
+  animation-delay: 2084ms;
+  animation-duration: 5038ms;
+  background-image: linear-gradient(to right, deepskyblue, transparent);
+}
+body main .meteors .meteor:nth-child(15)::before, body main .meteors .meteor:nth-child(15)::after {
+  background-image: linear-gradient(to right, transparent, deepskyblue, transparent);
+}
+body main .meteors .meteor:nth-child(16) {
+  left: 74vw;
+  animation-delay: 6476ms;
+  animation-duration: 5345ms;
+  background-image: linear-gradient(to right, salmon, transparent);
+}
+body main .meteors .meteor:nth-child(16)::before, body main .meteors .meteor:nth-child(16)::after {
+  background-image: linear-gradient(to right, transparent, salmon, transparent);
+}
+body main .meteors .meteor:nth-child(17) {
+  left: 78vw;
+  animation-delay: 5759ms;
+  animation-duration: 5947ms;
+  background-image: linear-gradient(to right, dodgerblue, transparent);
+}
+body main .meteors .meteor:nth-child(17)::before, body main .meteors .meteor:nth-child(17)::after {
+  background-image: linear-gradient(to right, transparent, dodgerblue, transparent);
+}
+body main .meteors .meteor:nth-child(18) {
+  left: 81vw;
+  animation-delay: 5894ms;
+  animation-duration: 4828ms;
+  background-image: linear-gradient(to right, gold, transparent);
+}
+body main .meteors .meteor:nth-child(18)::before, body main .meteors .meteor:nth-child(18)::after {
+  background-image: linear-gradient(to right, transparent, gold, transparent);
+}
+body main .meteors .meteor:nth-child(19) {
+  left: 85vw;
+  animation-delay: 7837ms;
+  animation-duration: 2664ms;
+  background-image: linear-gradient(to right, mediumvioletred, transparent);
+}
+body main .meteors .meteor:nth-child(19)::before, body main .meteors .meteor:nth-child(19)::after {
+  background-image: linear-gradient(to right, transparent, mediumvioletred, transparent);
+}
+body main .meteors .meteor:nth-child(20) {
+  left: 90vw;
+  animation-delay: 4654ms;
+  animation-duration: 5778ms;
+  background-image: linear-gradient(to right, mediumaquamarine, transparent);
+}
+body main .meteors .meteor:nth-child(20)::before, body main .meteors .meteor:nth-child(20)::after {
+  background-image: linear-gradient(to right, transparent, mediumaquamarine, transparent);
 }
 body main header.parallax-background {
   position: relative;
@@ -144,6 +290,14 @@ body main header.parallax-background .title {
   transform: translateZ(-30px) translateY(150vh) scale(0);
   animation: title-slide-in 2s ease-out 0.5s forwards;
 }
+@keyframes title-slide-in {
+  0% {
+    transform: translateZ(-30px) translateY(150vh) scale(0);
+  }
+  100% {
+    transform: translateZ(-30px) translateY(0) scale(4);
+  }
+}
 body main header.parallax-background .title span {
   font-size: 7rem;
   z-index: 5;
@@ -163,9 +317,150 @@ body main header.parallax-background .title span:nth-child(4) {
 body main header.parallax-background .title span:nth-child(5) {
   animation: l 15s ease-in-out 0s infinite forwards;
 }
+@keyframes K {
+  0% {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+  }
+  20% {
+    color: orange;
+    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
+  }
+  40% {
+    color: lime;
+    text-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 30px lime, 0 0 40px lime;
+  }
+  60% {
+    color: magenta;
+    text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
+  }
+  80% {
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
+  }
+  100% {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+  }
+}
+@keyframes a {
+  0% {
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
+  }
+  20% {
+    color: magenta;
+    text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
+  }
+  40% {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+  }
+  60% {
+    color: lime;
+    text-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 30px lime, 0 0 40px lime;
+  }
+  80% {
+    color: orange;
+    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
+  }
+  100% {
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
+  }
+}
+@keyframes z {
+  0% {
+    color: orange;
+    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
+  }
+  20% {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+  }
+  40% {
+    color: magenta;
+    text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
+  }
+  60% {
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
+  }
+  80% {
+    color: lime;
+    text-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 30px lime, 0 0 40px lime;
+  }
+  100% {
+    color: orange;
+    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
+  }
+}
+@keyframes u {
+  0% {
+    color: magenta;
+    text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
+  }
+  20% {
+    color: lime;
+    text-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 30px lime, 0 0 40px lime;
+  }
+  40% {
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
+  }
+  60% {
+    color: orange;
+    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
+  }
+  80% {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+  }
+  100% {
+    color: magenta;
+    text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
+  }
+}
+@keyframes l {
+  0% {
+    color: lime;
+    text-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 30px lime, 0 0 40px lime;
+  }
+  20% {
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
+  }
+  40% {
+    color: orange;
+    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
+  }
+  60% {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+  }
+  80% {
+    color: magenta;
+    text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
+  }
+  100% {
+    color: lime;
+    text-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 30px lime, 0 0 40px lime;
+  }
+}
 body main header.parallax-background .starship {
   width: 60px;
   animation: starship 10s linear 0s infinite forwards;
+}
+@keyframes starship {
+  0% {
+    transform: translateZ(-10px) translateX(600px) translateY(-100px) scale(2);
+  }
+  60% {
+    transform: translateZ(-10px) translateX(600px) translateY(-100px) scale(2);
+  }
+  100% {
+    transform: translateZ(-10px) translateX(1500px) translateY(-1000px) scale(2);
+  }
 }
 body main header.parallax-background .clouds {
   transform: translateZ(-5px) scale(1.5);
@@ -204,7 +499,7 @@ body main header.parallax-background .city-with-colors img {
   width: 25%;
 }
 body main header.parallax-background .cover {
-  transform: translateZ(-10px) scale(2);
+  transform: translateX(-8px) translateZ(-10px) scale(2);
   background-image: linear-gradient(to bottom, transparent 0% 75%, #0a426e 75% 100%);
   width: 100%;
   height: 100%;
@@ -267,169 +562,6 @@ body main .content hr {
   margin: 1em 0;
   border: 1px solid magenta;
   box-shadow: 0 0 5px 0 fuchsia inset, 0 0 10px 0 fuchsia inset, 0 0 15px 0 fuchsia inset, 0 0 20px 0 fuchsia inset, 0 0 5px 0 fuchsia, 0 0 10px 0 fuchsia, 0 0 15px 0 fuchsia, 0 0 20px 0 fuchsia;
-}
-
-@keyframes meteor-shower {
-  0% {
-    opacity: 1;
-    transform: rotate(225deg) translateX(100px);
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(225deg) translateX(-1000px);
-    opacity: 0;
-  }
-}
-@keyframes starship {
-  0% {
-    transform: translateZ(-10px) translateX(600px) translateY(-100px) scale(2);
-  }
-  60% {
-    transform: translateZ(-10px) translateX(600px) translateY(-100px) scale(2);
-  }
-  100% {
-    transform: translateZ(-10px) translateX(1500px) translateY(-1000px) scale(2);
-  }
-}
-@keyframes title-slide-in {
-  0% {
-    transform: translateZ(-30px) translateY(150vh) scale(0);
-  }
-  100% {
-    transform: translateZ(-30px) translateY(0) scale(4);
-  }
-}
-@keyframes K {
-  0% {
-    color: red;
-    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
-  }
-  20% {
-    color: orange;
-    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
-  }
-  40% {
-    color: #39ff14;
-    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14;
-  }
-  60% {
-    color: magenta;
-    text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
-  }
-  80% {
-    color: cyan;
-    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
-  }
-  100% {
-    color: red;
-    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
-  }
-}
-@keyframes a {
-  0% {
-    color: cyan;
-    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
-  }
-  20% {
-    color: magenta;
-    text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
-  }
-  40% {
-    color: red;
-    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
-  }
-  60% {
-    color: #39ff14;
-    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14;
-  }
-  80% {
-    color: orange;
-    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
-  }
-  100% {
-    color: cyan;
-    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
-  }
-}
-@keyframes z {
-  0% {
-    color: orange;
-    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
-  }
-  20% {
-    color: red;
-    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
-  }
-  40% {
-    color: magenta;
-    text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
-  }
-  60% {
-    color: cyan;
-    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
-  }
-  80% {
-    color: #39ff14;
-    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14;
-  }
-  100% {
-    color: orange;
-    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
-  }
-}
-@keyframes u {
-  0% {
-    color: magenta;
-    text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
-  }
-  20% {
-    color: #39ff14;
-    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14;
-  }
-  40% {
-    color: cyan;
-    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
-  }
-  60% {
-    color: orange;
-    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
-  }
-  80% {
-    color: red;
-    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
-  }
-  100% {
-    color: magenta;
-    text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
-  }
-}
-@keyframes l {
-  0% {
-    color: #39ff14;
-    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14;
-  }
-  20% {
-    color: cyan;
-    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
-  }
-  40% {
-    color: orange;
-    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
-  }
-  60% {
-    color: red;
-    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
-  }
-  80% {
-    color: magenta;
-    text-shadow: 0 0 10px magenta, 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
-  }
-  100% {
-    color: #39ff14;
-    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
