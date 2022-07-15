@@ -1,7 +1,95 @@
 @charset "UTF-8";
 @font-face {
+  font-family: "Bonte Divine";
+  src: url("../fonts/BonteDivine.otf") format("opentype");
+}
+@font-face {
+  font-family: "Dopest";
+  src: url("../fonts/DopestbyMARSNEV.otf") format("opentype");
+}
+@font-face {
+  font-family: "Gist Light";
+  src: url("../fonts/GistLight.otf") format("opentype");
+}
+@font-face {
+  font-family: "Neon Glow";
+  src: url("../fonts/NEON GLOW.otf") format("opentype");
+}
+@font-face {
+  font-family: "Neon Led Light";
+  src: url("../fonts/NEONLEDLight.otf") format("opentype");
+}
+@font-face {
+  font-family: "Qualified Good";
+  src: url("../fonts/QUALIFIED GOOD.otf") format("opentype");
+}
+@font-face {
+  font-family: "Outline Kei";
+  src: url("../fonts/2020 Outline Kei.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Birdbrain";
+  src: url("../fonts/Birdbrain.ttf") format("truetype");
+}
+@font-face {
   font-family: "Cheboyga";
   src: url("../fonts/Cheboyga.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Face";
+  src: url("../fonts/FACETSNF.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Gambler";
+  src: url("../fonts/Gambler.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Golden Arrow";
+  src: url("../fonts/Golden_Arrow.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Grafika Type 2";
+  src: url("../fonts/GRAFIKA TYPE.2.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Green";
+  src: url("../fonts/Green.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Liberta";
+  src: url("../fonts/Liberta.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Look";
+  src: url("../fonts/Look.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Neonblitz";
+  src: url("../fonts/Neonblitz.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Playback";
+  src: url("../fonts/Playback.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Prestige Signature";
+  src: url("../fonts/Prestige Signature Serif - Demo.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Race 1";
+  src: url("../fonts/RACE1 Brannt Chiseled NCV.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Retrolight";
+  src: url("../fonts/Retrolight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Tissue";
+  src: url("../fonts/Tissue.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Wander Brave";
+  src: url("../fonts/Wander Brave.ttf") format("truetype");
 }
 :root {
   scroll-behavior: smooth;
@@ -12,7 +100,7 @@
 }
 
 ::selection {
-  background-color: cyan;
+  text-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15px cyan, 0 0 20px cyan;
   color: indigo;
 }
 
@@ -22,7 +110,7 @@
   box-sizing: border-box;
   font: 1rem "Cheboyga", serif;
 }
-* ::after, * ::before {
+*::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -88,8 +176,8 @@ body main .meteors .meteor::after {
 }
 body main .meteors .meteor:nth-child(1) {
   left: -20vw;
-  animation-delay: 8349ms;
-  animation-duration: 4542ms;
+  animation-delay: 301ms;
+  animation-duration: 4981ms;
   background-image: linear-gradient(to right, red, transparent);
 }
 body main .meteors .meteor:nth-child(1)::before, body main .meteors .meteor:nth-child(1)::after {
@@ -97,8 +185,8 @@ body main .meteors .meteor:nth-child(1)::before, body main .meteors .meteor:nth-
 }
 body main .meteors .meteor:nth-child(2) {
   left: -10vw;
-  animation-delay: 3322ms;
-  animation-duration: 4097ms;
+  animation-delay: 3920ms;
+  animation-duration: 5122ms;
   background-image: linear-gradient(to right, cyan, transparent);
 }
 body main .meteors .meteor:nth-child(2)::before, body main .meteors .meteor:nth-child(2)::after {
@@ -106,8 +194,8 @@ body main .meteors .meteor:nth-child(2)::before, body main .meteors .meteor:nth-
 }
 body main .meteors .meteor:nth-child(3) {
   left: 0vw;
-  animation-delay: 2109ms;
-  animation-duration: 5245ms;
+  animation-delay: 4423ms;
+  animation-duration: 2334ms;
   background-image: linear-gradient(to right, magenta, transparent);
 }
 body main .meteors .meteor:nth-child(3)::before, body main .meteors .meteor:nth-child(3)::after {
@@ -115,8 +203,8 @@ body main .meteors .meteor:nth-child(3)::before, body main .meteors .meteor:nth-
 }
 body main .meteors .meteor:nth-child(4) {
   left: 8vw;
-  animation-delay: 6343ms;
-  animation-duration: 5035ms;
+  animation-delay: 4828ms;
+  animation-duration: 3421ms;
   background-image: linear-gradient(to right, orange, transparent);
 }
 body main .meteors .meteor:nth-child(4)::before, body main .meteors .meteor:nth-child(4)::after {
@@ -124,8 +212,8 @@ body main .meteors .meteor:nth-child(4)::before, body main .meteors .meteor:nth-
 }
 body main .meteors .meteor:nth-child(5) {
   left: 15vw;
-  animation-delay: 7518ms;
-  animation-duration: 3634ms;
+  animation-delay: 7441ms;
+  animation-duration: 2269ms;
   background-image: linear-gradient(to right, deeppink, transparent);
 }
 body main .meteors .meteor:nth-child(5)::before, body main .meteors .meteor:nth-child(5)::after {
@@ -133,8 +221,8 @@ body main .meteors .meteor:nth-child(5)::before, body main .meteors .meteor:nth-
 }
 body main .meteors .meteor:nth-child(6) {
   left: 17vw;
-  animation-delay: 277ms;
-  animation-duration: 5315ms;
+  animation-delay: 997ms;
+  animation-duration: 5796ms;
   background-image: linear-gradient(to right, yellow, transparent);
 }
 body main .meteors .meteor:nth-child(6)::before, body main .meteors .meteor:nth-child(6)::after {
@@ -142,8 +230,8 @@ body main .meteors .meteor:nth-child(6)::before, body main .meteors .meteor:nth-
 }
 body main .meteors .meteor:nth-child(7) {
   left: 21vw;
-  animation-delay: 5152ms;
-  animation-duration: 2314ms;
+  animation-delay: 5250ms;
+  animation-duration: 4185ms;
   background-image: linear-gradient(to right, hotpink, transparent);
 }
 body main .meteors .meteor:nth-child(7)::before, body main .meteors .meteor:nth-child(7)::after {
@@ -151,8 +239,8 @@ body main .meteors .meteor:nth-child(7)::before, body main .meteors .meteor:nth-
 }
 body main .meteors .meteor:nth-child(8) {
   left: 26vw;
-  animation-delay: 8651ms;
-  animation-duration: 2639ms;
+  animation-delay: 6448ms;
+  animation-duration: 4939ms;
   background-image: linear-gradient(to right, lime, transparent);
 }
 body main .meteors .meteor:nth-child(8)::before, body main .meteors .meteor:nth-child(8)::after {
@@ -160,8 +248,8 @@ body main .meteors .meteor:nth-child(8)::before, body main .meteors .meteor:nth-
 }
 body main .meteors .meteor:nth-child(9) {
   left: 37vw;
-  animation-delay: 8136ms;
-  animation-duration: 3904ms;
+  animation-delay: 5939ms;
+  animation-duration: 3778ms;
   background-image: linear-gradient(to right, darkorchid, transparent);
 }
 body main .meteors .meteor:nth-child(9)::before, body main .meteors .meteor:nth-child(9)::after {
@@ -169,8 +257,8 @@ body main .meteors .meteor:nth-child(9)::before, body main .meteors .meteor:nth-
 }
 body main .meteors .meteor:nth-child(10) {
   left: 45vw;
-  animation-delay: 5188ms;
-  animation-duration: 5769ms;
+  animation-delay: 7790ms;
+  animation-duration: 5906ms;
   background-image: linear-gradient(to right, cornflowerblue, transparent);
 }
 body main .meteors .meteor:nth-child(10)::before, body main .meteors .meteor:nth-child(10)::after {
@@ -178,8 +266,8 @@ body main .meteors .meteor:nth-child(10)::before, body main .meteors .meteor:nth
 }
 body main .meteors .meteor:nth-child(11) {
   left: 53vw;
-  animation-delay: 8214ms;
-  animation-duration: 3854ms;
+  animation-delay: 5427ms;
+  animation-duration: 4972ms;
   background-image: linear-gradient(to right, crimson, transparent);
 }
 body main .meteors .meteor:nth-child(11)::before, body main .meteors .meteor:nth-child(11)::after {
@@ -187,8 +275,8 @@ body main .meteors .meteor:nth-child(11)::before, body main .meteors .meteor:nth
 }
 body main .meteors .meteor:nth-child(12) {
   left: 59vw;
-  animation-delay: 1856ms;
-  animation-duration: 5241ms;
+  animation-delay: 8874ms;
+  animation-duration: 2145ms;
   background-image: linear-gradient(to right, coral, transparent);
 }
 body main .meteors .meteor:nth-child(12)::before, body main .meteors .meteor:nth-child(12)::after {
@@ -196,8 +284,8 @@ body main .meteors .meteor:nth-child(12)::before, body main .meteors .meteor:nth
 }
 body main .meteors .meteor:nth-child(13) {
   left: 62vw;
-  animation-delay: 996ms;
-  animation-duration: 5451ms;
+  animation-delay: 8081ms;
+  animation-duration: 3779ms;
   background-image: linear-gradient(to right, darkcyan, transparent);
 }
 body main .meteors .meteor:nth-child(13)::before, body main .meteors .meteor:nth-child(13)::after {
@@ -205,8 +293,8 @@ body main .meteors .meteor:nth-child(13)::before, body main .meteors .meteor:nth
 }
 body main .meteors .meteor:nth-child(14) {
   left: 65vw;
-  animation-delay: 2287ms;
-  animation-duration: 2037ms;
+  animation-delay: 4280ms;
+  animation-duration: 2441ms;
   background-image: linear-gradient(to right, darkmagenta, transparent);
 }
 body main .meteors .meteor:nth-child(14)::before, body main .meteors .meteor:nth-child(14)::after {
@@ -214,8 +302,8 @@ body main .meteors .meteor:nth-child(14)::before, body main .meteors .meteor:nth
 }
 body main .meteors .meteor:nth-child(15) {
   left: 69vw;
-  animation-delay: 2084ms;
-  animation-duration: 5038ms;
+  animation-delay: 3809ms;
+  animation-duration: 3370ms;
   background-image: linear-gradient(to right, deepskyblue, transparent);
 }
 body main .meteors .meteor:nth-child(15)::before, body main .meteors .meteor:nth-child(15)::after {
@@ -223,8 +311,8 @@ body main .meteors .meteor:nth-child(15)::before, body main .meteors .meteor:nth
 }
 body main .meteors .meteor:nth-child(16) {
   left: 74vw;
-  animation-delay: 6476ms;
-  animation-duration: 5345ms;
+  animation-delay: 8326ms;
+  animation-duration: 3888ms;
   background-image: linear-gradient(to right, salmon, transparent);
 }
 body main .meteors .meteor:nth-child(16)::before, body main .meteors .meteor:nth-child(16)::after {
@@ -232,8 +320,8 @@ body main .meteors .meteor:nth-child(16)::before, body main .meteors .meteor:nth
 }
 body main .meteors .meteor:nth-child(17) {
   left: 78vw;
-  animation-delay: 5759ms;
-  animation-duration: 5947ms;
+  animation-delay: 3317ms;
+  animation-duration: 3577ms;
   background-image: linear-gradient(to right, dodgerblue, transparent);
 }
 body main .meteors .meteor:nth-child(17)::before, body main .meteors .meteor:nth-child(17)::after {
@@ -241,8 +329,8 @@ body main .meteors .meteor:nth-child(17)::before, body main .meteors .meteor:nth
 }
 body main .meteors .meteor:nth-child(18) {
   left: 81vw;
-  animation-delay: 5894ms;
-  animation-duration: 4828ms;
+  animation-delay: 4411ms;
+  animation-duration: 2631ms;
   background-image: linear-gradient(to right, gold, transparent);
 }
 body main .meteors .meteor:nth-child(18)::before, body main .meteors .meteor:nth-child(18)::after {
@@ -250,8 +338,8 @@ body main .meteors .meteor:nth-child(18)::before, body main .meteors .meteor:nth
 }
 body main .meteors .meteor:nth-child(19) {
   left: 85vw;
-  animation-delay: 7837ms;
-  animation-duration: 2664ms;
+  animation-delay: 700ms;
+  animation-duration: 3484ms;
   background-image: linear-gradient(to right, mediumvioletred, transparent);
 }
 body main .meteors .meteor:nth-child(19)::before, body main .meteors .meteor:nth-child(19)::after {
@@ -259,8 +347,8 @@ body main .meteors .meteor:nth-child(19)::before, body main .meteors .meteor:nth
 }
 body main .meteors .meteor:nth-child(20) {
   left: 90vw;
-  animation-delay: 4654ms;
-  animation-duration: 5778ms;
+  animation-delay: 7312ms;
+  animation-duration: 5108ms;
   background-image: linear-gradient(to right, mediumaquamarine, transparent);
 }
 body main .meteors .meteor:nth-child(20)::before, body main .meteors .meteor:nth-child(20)::after {
@@ -299,6 +387,7 @@ body main header.parallax-background .title {
   }
 }
 body main header.parallax-background .title span {
+  font: 1em "Outline Kei", sans-serif;
   font-size: 7rem;
   z-index: 5;
 }
@@ -536,10 +625,10 @@ body main .content .title::before, body main .content .title::after {
   }
 }
 body main .content .banner {
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 0.5em 1em;
   text-align: center;
-  width: max-content;
+  width: min(580px, 100%);
   border-radius: 10px;
   margin-bottom: 1em;
   color: magenta;
@@ -549,6 +638,7 @@ body main .content .banner {
   box-shadow: 0 0 5px 0 magenta inset, 0 0 10px 0 magenta inset, 0 0 15px 0 magenta inset, 0 0 20px 0 magenta inset, 0 0 5px 0 magenta, 0 0 10px 0 magenta, 0 0 15px 0 magenta, 0 0 20px 0 magenta;
 }
 body main .content p {
+  font-size: 1.3rem;
   text-align: justify;
   max-width: 1000px;
   color: cyan;

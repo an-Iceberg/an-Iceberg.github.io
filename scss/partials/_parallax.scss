@@ -41,6 +41,7 @@
     }
 
     .title span {
+      font: 1em "Outline Kei", sans-serif;
       font-size: 7rem;
       z-index: 5;
     }
@@ -53,6 +54,7 @@
       }
     }
 
+    // Each letter's color is animated
     @each $letter, $colors in variables.$title {
       @keyframes #{$letter} {
         0% {

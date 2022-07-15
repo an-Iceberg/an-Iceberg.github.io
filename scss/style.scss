@@ -2,12 +2,6 @@
 @use "mixins";
 @use "variables";
 
-// TODO: split SCSS into multiple files
-@font-face {
-  font-family: "Cheboyga";
-  src: url("../fonts/Cheboyga.ttf") format("truetype");
-}
-
 :root {
   scroll-behavior: smooth;
 }
@@ -17,7 +11,8 @@
 }
 
 ::selection {
-  background-color: cyan;
+  // background-color: black;
+  @include mixins.text-shadow(5px, 5px, cyan);
   color: indigo;
 }
 
@@ -29,14 +24,14 @@
 
 * {
   @include zero-padding-margin();
+  // TODO: font needs to be removed from here
   font: 1rem "Cheboyga", serif;
 
-  ::after, ::before {
+  &::after, &::before {
     @include zero-padding-margin();
   }
 }
 
-// TODO: implement parallax
 // TODO: fix the backgrounds and the media queries
 body {
   background-color: #000000;
@@ -44,7 +39,6 @@ body {
   background-attachment: fixed;
 
   main {
-    // TODO: make the bg image slowly spin
     // TODO: pure CSS meteor animations
     background-image: url("/images/stars.png");
     background-attachment: fixed;
@@ -94,10 +88,10 @@ body {
       }
 
       .banner {
-        font-size: 1.5rem;
+        font-size: 2rem;
         padding: 0.5em 1em;
         text-align: center;
-        width: max-content;
+        width: min(580px, 100%);
         border-radius: 10px;
         margin-bottom: $spacing;
         // color: indigo;
@@ -108,7 +102,9 @@ body {
         @include mixins.box-shadow(5px, 5px, magenta);
       }
 
+      // TODO: find a good font for this element
       p {
+        font-size: 1.3rem;
         text-align: justify;
         max-width: $content-width;
         color: cyan;
