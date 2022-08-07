@@ -32,6 +32,17 @@
   }
 }
 
+// FIXME: Find a better solution than this
+.warning {
+  border-radius: 10px;
+  background-image: repeating-linear-gradient(-45deg, black 0px 30px, orange 30px 60px);
+  padding: 10px;
+
+  p {
+    background-image: linear-gradient(indigo, indigo);
+  }
+}
+
 // TODO: fix the backgrounds and the media queries
 body {
   background-color: #000000;
@@ -57,7 +68,6 @@ body {
       flex-direction: column;
       align-items: center;
       padding: 0 0.5em 1.5em 0.5em;
-      $content-width: 1000px;
       $spacing: 1em;
 
       .title {
@@ -102,11 +112,10 @@ body {
         @include mixins.box-shadow(5px, 5px, magenta);
       }
 
-      // TODO: find a good font for this element
       p {
         font-size: 1.3rem;
         text-align: justify;
-        max-width: $content-width;
+        max-width: variables.$content-width;
         color: cyan;
         background-color: indigo;
         padding: 0.5em;
@@ -115,11 +124,13 @@ body {
 
       hr {
         font-size: 1.5rem;
-        width: min($content-width, 100%);
+        width: min(variables.$content-width, 100%);
         margin: $spacing 0;
         border: 1px solid magenta;
         @include mixins.box-shadow(5px, 5px, fuchsia)
       }
+
+      @include partials.icons;
     }
   }
 }
