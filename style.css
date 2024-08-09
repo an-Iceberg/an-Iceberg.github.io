@@ -1,5 +1,285 @@
+:root {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #200040;
+  /* background-image: linear-gradient(to bottom, navy, indigo 20% 35%, coral 55%); */
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+#name {
+  gap: 1.25em;
+  padding: 0.75em 1.25em;
+  justify-content: space-evenly;
+  margin-bottom: 1.25em;
+}
+
+@media screen and (width < 518px) {
+  #name {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}
+
+#rust-projects-heading {
+  margin-bottom: 0.5em;
+}
+
+#rust-projects {
+  align-items: flex-start;
+  gap: 0.5em;
+  padding: 1em;
+}
+
+.flexbox-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexbox-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.neon-text-magenta {
+  color: magenta;
+  text-shadow:
+    0 0 5px magenta,
+    0 0 10px magenta,
+    0 0 15px magenta,
+    0 0 20px magenta
+  ;
+}
+
+.neon-text-cyan {
+  color: cyan;
+  text-shadow:
+    0 0 5px cyan,
+    0 0 10px cyan,
+    0 0 15px cyan,
+    0 0 20px cyan
+  ;
+}
+
+.neon-text-lime {
+  color: lime;
+  text-shadow:
+    0 0 5px lime,
+    0 0 10px lime,
+    0 0 15px lime,
+    0 0 20px lime
+  ;
+}
+
+.neon-text-orange {
+  color: orange;
+  text-shadow:
+    0 0 5px orange,
+    0 0 10px orange,
+    0 0 15px orange,
+    0 0 20px orange
+  ;
+}
+
+.neon-text-teal {
+  color: #00ff89;
+  text-shadow:
+    0 0 5px #00ff89,
+    0 0 10px #00ff89,
+    0 0 15px #00ff89,
+    0 0 20px #00ff89
+  ;
+}
+
+.neon-text-pink {
+  color: #ff0092;
+  text-shadow:
+    0 0 5px #ff0092,
+    0 0 10px #ff0092,
+    0 0 15px #ff0092,
+    0 0 20px #ff0092
+  ;
+}
+
+.neon-sign-white {
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  color: white;
+  text-shadow:
+    0 0 5px white,
+    0 0 10px white,
+    0 0 15px white,
+    0 0 20px white
+  ;
+  border: 1px solid white;
+  box-shadow:
+    0 0 5px white inset,
+    0 0 10px white inset,
+    0 0 15px white inset,
+    0 0 20px white inset,
+    0 0 5px white,
+    0 0 10px white,
+    0 0 15px white,
+    0 0 20px white
+  ;
+}
+
+.neon-sign-magenta {
+  padding: 0.25em 0.75em;
+  border-radius: 10px;
+  color: magenta;
+  text-shadow:
+    0 0 5px magenta,
+    0 0 10px magenta,
+    0 0 15px magenta,
+    0 0 20px magenta
+  ;
+  border: 1px solid magenta;
+  box-shadow:
+    0 0 5px magenta inset,
+    0 0 10px magenta inset,
+    0 0 15px magenta inset,
+    0 0 20px magenta inset,
+    0 0 5px magenta,
+    0 0 10px magenta,
+    0 0 15px magenta,
+    0 0 20px magenta
+  ;
+}
+
+.neon-sign-cyan {
+  padding: 0.25em 0.75em;
+  border-radius: 10px;
+  color: cyan;
+  text-shadow:
+    0 0 5px cyan,
+    0 0 10px cyan,
+    0 0 15px cyan,
+    0 0 20px cyan
+  ;
+  border: 1px solid cyan;
+  box-shadow:
+    0 0 5px cyan inset,
+    0 0 10px cyan inset,
+    0 0 15px cyan inset,
+    0 0 20px cyan inset,
+    0 0 5px cyan,
+    0 0 10px cyan,
+    0 0 15px cyan,
+    0 0 20px cyan
+  ;
+}
+
+.neon-sign-lime {
+  padding: 0.25em 0.75em;
+  border-radius: 10px;
+  color: lime;
+  text-shadow:
+    0 0 5px lime,
+    0 0 10px lime,
+    0 0 15px lime,
+    0 0 20px lime
+  ;
+  border: 1px solid lime;
+  box-shadow:
+    0 0 5px lime inset,
+    0 0 10px lime inset,
+    0 0 15px lime inset,
+    0 0 20px lime inset,
+    0 0 5px lime,
+    0 0 10px lime,
+    0 0 15px lime,
+    0 0 20px lime
+  ;
+}
+
+.neon-sign-orange {
+  padding: 0.25em 0.75em;
+  border-radius: 10px;
+  color: orange;
+  text-shadow:
+    0 0 5px orange,
+    0 0 10px orange,
+    0 0 15px orange,
+    0 0 20px orange
+  ;
+  border: 1px solid orange;
+  box-shadow:
+    0 0 5px orange inset,
+    0 0 10px orange inset,
+    0 0 15px orange inset,
+    0 0 20px orange inset,
+    0 0 5px orange,
+    0 0 10px orange,
+    0 0 15px orange,
+    0 0 20px orange
+  ;
+}
+
+.neon-sign-rust {
+  padding: 0.25em 0.75em;
+  border-radius: 10px;
+  color: #d05e11;
+  text-shadow:
+    0 0 5px #d05e11,
+    0 0 10px #d05e11,
+    0 0 15px #d05e11,
+    0 0 20px #d05e11
+  ;
+  border: 1px solid #d05e11;
+  box-shadow:
+    0 0 5px #d05e11 inset,
+    0 0 10px #d05e11 inset,
+    0 0 15px #d05e11 inset,
+    0 0 20px #d05e11 inset,
+    0 0 5px #d05e11,
+    0 0 10px #d05e11,
+    0 0 15px #d05e11,
+    0 0 20px #d05e11
+  ;
+}
+
+.neon-sign-teal {
+  padding: 0.25em 0.75em;
+  border-radius: 10px;
+  color: #00ff89;
+  text-shadow:
+    0 0 5px #00ff89,
+    0 0 10px #00ff89,
+    0 0 15px #00ff89,
+    0 0 20px #00ff89
+  ;
+  border: 1px solid #00ff89;
+  box-shadow:
+    0 0 5px #00ff89 inset,
+    0 0 10px #00ff89 inset,
+    0 0 15px #00ff89 inset,
+    0 0 20px #00ff89 inset,
+    0 0 5px #00ff89,
+    0 0 10px #00ff89,
+    0 0 15px #00ff89,
+    0 0 20px #00ff89
+  ;
 }
