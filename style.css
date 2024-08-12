@@ -1,6 +1,7 @@
 :root {
   scroll-behavior: smooth;
   --my-color: #ff54fe;
+  --bg: #200040;
 }
 
 * {
@@ -11,16 +12,23 @@
 
 html {
   width: 100%;
-  height: 100%;
+  height: fit-content;
 }
 
 body {
-  background-color: #200040;
-  /* background-image: linear-gradient(to bottom, navy, indigo 20% 35%, coral 55%); */
+  /* background-color: var(--bg); */
+  background-image: linear-gradient(to bottom, navy, indigo 20% 35%, coral 55%);
   background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
-  /* gap: 1.25em; */
+  background-attachment: fixed;
+  height: fit-content;
+  width: 100% - calc(2*1.5em);
+  margin: 1.5em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2.5em;
 }
 
 h1 {
@@ -33,6 +41,9 @@ h2 {
 
 a, p {
   font-size: 1.25rem;
+}
+
+a, p, h2 {
   text-align: center;
 }
 
@@ -52,17 +63,32 @@ a::after {
 }
 
 #showcase {
-  align-items: flex-start;
+  max-width: 1280px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+
+@media screen and (width < 968px) {
+  #showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (width < 654px) {
+  #showcase {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 #name {
   gap: 1.25em;
   padding: 0.75em 1.25em;
   justify-content: space-evenly;
-  /* margin-bottom: 1.25em; */
+  background: var(--bg);
 }
 
-@media screen and (width < 518px) {
+@media screen and (width < 690px) {
   #name {
     flex-direction: column;
     gap: 0.5em;
@@ -82,129 +108,47 @@ a::after {
   }
 }
 
-.neon-text-me {
+.text-me {
   color: var(--my-color);
-  text-shadow:
-    0 0 5px var(--my-color),
-    0 0 10px var(--my-color),
-    0 0 15px var(--my-color),
-    0 0 20px var(--my-color)
-  ;
 }
 
-.neon-text-magenta {
+.text-magenta {
   color: magenta;
-  text-shadow:
-    0 0 5px magenta,
-    0 0 10px magenta,
-    0 0 15px magenta,
-    0 0 20px magenta
-  ;
 }
 
-.neon-text-cyan {
+.text-cyan {
   color: cyan;
-  text-shadow:
-    0 0 5px cyan,
-    0 0 10px cyan,
-    0 0 15px cyan,
-    0 0 20px cyan
-  ;
 }
 
-.neon-text-lime {
+.text-lime {
   color: lime;
-  text-shadow:
-    0 0 5px lime,
-    0 0 10px lime,
-    0 0 15px lime,
-    0 0 20px lime
-  ;
 }
 
-.neon-text-orange {
+.text-orange {
   color: orange;
-  text-shadow:
-    0 0 5px orange,
-    0 0 10px orange,
-    0 0 15px orange,
-    0 0 20px orange
-  ;
 }
 
-.neon-text-teal {
+.text-teal {
   color: #00ff89;
-  text-shadow:
-    0 0 5px #00ff89,
-    0 0 10px #00ff89,
-    0 0 15px #00ff89,
-    0 0 20px #00ff89
-  ;
 }
 
-.neon-text-pink {
+.text-pink {
   color: #ff0092;
-  text-shadow:
-    0 0 5px #ff0092,
-    0 0 10px #ff0092,
-    0 0 15px #ff0092,
-    0 0 20px #ff0092
-  ;
 }
 
-.neon-text-light-purple {
+.text-light-purple {
   color: #c745ff;
-  text-shadow:
-    0 0 5px #c745ff,
-    0 0 10px #c745ff,
-    0 0 15px #c745ff,
-    0 0 20px #c745ff
-  ;
 }
 
-.neon-text-blue {
+.text-blue {
   color: #00d3ff;
-  text-shadow:
-    0 0 5px #00d3ff,
-    0 0 10px #00d3ff,
-    0 0 15px #00d3ff,
-    0 0 20px #00d3ff
-  ;
-}
-
-.neon-sign-white {
-  padding: 0.5em 1em;
-  border-radius: 10px;
-  color: white;
-  text-shadow:
-    0 0 5px white,
-    0 0 10px white,
-    0 0 15px white,
-    0 0 20px white
-  ;
-  border: 1px solid white;
-  box-shadow:
-    0 0 5px white inset,
-    0 0 10px white inset,
-    0 0 15px white inset,
-    0 0 20px white inset,
-    0 0 5px white,
-    0 0 10px white,
-    0 0 15px white,
-    0 0 20px white
-  ;
 }
 
 .neon-sign-me {
   padding: 0.25em 0.75em;
   border-radius: 10px;
   color: var(--my-color);
-  text-shadow:
-    0 0 5px var(--my-color),
-    0 0 10px var(--my-color),
-    0 0 15px var(--my-color),
-    0 0 20px var(--my-color)
-  ;
+  background: var(--bg);
   border: 1px solid var(--my-color);
   box-shadow:
     0 0 5px var(--my-color) inset,
@@ -222,12 +166,7 @@ a::after {
   padding: 0.25em 0.75em;
   border-radius: 10px;
   color: magenta;
-  text-shadow:
-    0 0 5px magenta,
-    0 0 10px magenta,
-    0 0 15px magenta,
-    0 0 20px magenta
-  ;
+  background: var(--bg);
   border: 1px solid magenta;
   box-shadow:
     0 0 5px magenta inset,
@@ -245,12 +184,7 @@ a::after {
   padding: 0.25em 0.75em;
   border-radius: 10px;
   color: cyan;
-  text-shadow:
-    0 0 5px cyan,
-    0 0 10px cyan,
-    0 0 15px cyan,
-    0 0 20px cyan
-  ;
+  background: var(--bg);
   border: 1px solid cyan;
   box-shadow:
     0 0 5px cyan inset,
@@ -268,12 +202,7 @@ a::after {
   padding: 0.25em 0.75em;
   border-radius: 10px;
   color: lime;
-  text-shadow:
-    0 0 5px lime,
-    0 0 10px lime,
-    0 0 15px lime,
-    0 0 20px lime
-  ;
+  background: var(--bg);
   border: 1px solid lime;
   box-shadow:
     0 0 5px lime inset,
@@ -291,12 +220,7 @@ a::after {
   padding: 0.25em 0.75em;
   border-radius: 10px;
   color: orange;
-  text-shadow:
-    0 0 5px orange,
-    0 0 10px orange,
-    0 0 15px orange,
-    0 0 20px orange
-  ;
+  background: var(--bg);
   border: 1px solid orange;
   box-shadow:
     0 0 5px orange inset,
@@ -314,12 +238,7 @@ a::after {
   padding: 0.25em 0.75em;
   border-radius: 10px;
   color: #d05e11;
-  text-shadow:
-    0 0 5px #d05e11,
-    0 0 10px #d05e11,
-    0 0 15px #d05e11,
-    0 0 20px #d05e11
-  ;
+  background: var(--bg);
   border: 1px solid #d05e11;
   box-shadow:
     0 0 5px #d05e11 inset,
@@ -337,12 +256,7 @@ a::after {
   padding: 0.25em 0.75em;
   border-radius: 10px;
   color: #00ff89;
-  text-shadow:
-    0 0 5px #00ff89,
-    0 0 10px #00ff89,
-    0 0 15px #00ff89,
-    0 0 20px #00ff89
-  ;
+  background: var(--bg);
   border: 1px solid #00ff89;
   box-shadow:
     0 0 5px #00ff89 inset,
@@ -360,12 +274,7 @@ a::after {
   padding: 0.25em 0.75em;
   border-radius: 10px;
   color: #ff0092;
-  text-shadow:
-    0 0 5px #ff0092,
-    0 0 10px #ff0092,
-    0 0 15px #ff0092,
-    0 0 20px #ff0092
-  ;
+  background: var(--bg);
   border: 1px solid #ff0092;
   box-shadow:
     0 0 5px #ff0092 inset,
@@ -383,12 +292,7 @@ a::after {
   padding: 0.25em 0.75em;
   border-radius: 10px;
   color: #c745ff;
-  text-shadow:
-    0 0 5px #c745ff,
-    0 0 10px #c745ff,
-    0 0 15px #c745ff,
-    0 0 20px #c745ff
-  ;
+  background: var(--bg);
   border: 1px solid #c745ff;
   box-shadow:
     0 0 5px #c745ff inset,
@@ -406,12 +310,7 @@ a::after {
   padding: 0.25em 0.75em;
   border-radius: 10px;
   color: #00d3ff;
-  text-shadow:
-    0 0 5px #00d3ff,
-    0 0 10px #00d3ff,
-    0 0 15px #00d3ff,
-    0 0 20px #00d3ff
-  ;
+  background: var(--bg);
   border: 1px solid #00d3ff;
   box-shadow:
     0 0 5px #00d3ff inset,
@@ -428,10 +327,11 @@ a::after {
 .flexbox-vertical {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 1em;
   padding: 1em;
+  height: fit-content;
 
   img {
     width: 13em;
@@ -445,4 +345,12 @@ a::after {
   align-items: center;
   gap: 1em;
   padding: 1em;
+}
+
+.grid-2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1em;
+  column-gap: 0;
 }
