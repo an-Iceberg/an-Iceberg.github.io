@@ -13,12 +13,30 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font: "Varela", 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  font-family: "Varela", 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 }
 
 html {
   width: 100%;
   height: fit-content;
+}
+
+.drop {
+  /* position: absolute; */
+  height: 100px;
+  background-image: linear-gradient(transparent, white);
+  border-bottom-left-radius: 99px;
+  border-bottom-right-radius: 99px;
+  animation: rainfall 5s linear infinite;
+}
+
+@keyframes rainfall {
+  from {
+    top: calc(0px - 100px);
+  }
+  to {
+    top: calc(100% + 100px);
+  }
 }
 
 body {
@@ -30,37 +48,125 @@ body {
   width: 100% - calc(2*1.5em);
   margin: 1.5em;
 
+  z-index: 1;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   gap: 2.5em;
+
+
+  /* Images */
+  .images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: auto;
+      z-index: 2;
+    }
+
+    .mountain-far {
+      position: fixed;
+      bottom: 30%;
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: 3;
+    }
+
+    .mountain {
+      position: fixed;
+      bottom: 20%;
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: 4;
+    }
+
+    .city-1 {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      bottom: 15%;
+      z-index: 5;
+      background-position: bottom;
+      background-size: 25%;
+      background-image: url("night-city2.png");
+      background-repeat: repeat-x;
+    }
+
+    .city-2 {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      bottom: 2%;
+      z-index: 6;
+      background-position: bottom;
+      background-size: 40%;
+      background-image: url("night-city.png");
+      background-repeat: repeat-x;
+    }
+
+    .city-3 {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      z-index: 7;
+      background-position: bottom;
+      background-size: 60%;
+      background-image: url("night-city1.png");
+      background-repeat: repeat-x;
+    }
+  }
 }
 
-h1 {
-  font-size: 2.75rem;
+@media screen and (width < 1100px) {
+  body .images .stars {
+    left: -250px;
+  }
 }
 
-h2 {
-  font-size: 2rem;
+@media screen and (width < 648px) {
+  body .images .stars {
+    left: -500px;
+  }
 }
 
-a, p {
-  font-size: 1.25rem;
+@media screen and (width < 728px) {
+  body .images *:not(.stars) {
+    opacity: 0;
+  }
+  body {
+    background-color: indigo;
+    background-image: none;
+  }
 }
 
-a, p, h2 {
-  text-align: center;
-}
+h1 { font-size: 2.75rem; }
+
+h2 { font-size: 2rem; }
+
+a, p { font-size: 1.25rem; }
+
+a, p, h2 { text-align: center; }
 
 a {
   text-decoration: none;
   width: 100%;
 }
 
-a:hover {
-  text-decoration: underline wavy;
-}
+a:hover { text-decoration: underline wavy; }
 
 a::after {
   content: '⇗';
@@ -68,11 +174,15 @@ a::after {
   margin-left: 0.25em;
 }
 
+#name, #showcase { z-index: 30; }
+
 #showcase {
   max-width: 1280px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2em;
+
+  /* opacity: 0; dbg: remove when done */
 }
 
 @media screen and (width < 968px) {
@@ -114,41 +224,23 @@ a::after {
   }
 }
 
-.text-me {
-  color: var(--my-color);
-}
+.text-me { color: var(--my-color); }
 
-.text-magenta {
-  color: magenta;
-}
+.text-magenta { color: magenta; }
 
-.text-cyan {
-  color: cyan;
-}
+.text-cyan { color: cyan; }
 
-.text-lime {
-  color: lime;
-}
+.text-lime { color: lime; }
 
-.text-orange {
-  color: orange;
-}
+.text-orange { color: orange; }
 
-.text-teal {
-  color: #00ff89;
-}
+.text-teal { color: #00ff89; }
 
-.text-pink {
-  color: #ff0092;
-}
+.text-pink { color: #ff0092; }
 
-.text-light-purple {
-  color: #c745ff;
-}
+.text-light-purple { color: #c745ff; }
 
-.text-blue {
-  color: #00d3ff;
-}
+.text-blue { color: #00d3ff; }
 
 .neon-sign-me {
   padding: 0.25em 0.75em;
@@ -339,9 +431,7 @@ a::after {
   padding: 1em;
   height: fit-content;
 
-  img {
-    width: 13em;
-  }
+  img { width: 13em; }
 }
 
 .flexbox-horizontal {

@@ -11,7 +11,17 @@
 
   <script src="alpinejs@3.13.7.min.js" defer></script>
 </head>
-<body class="">
+<body>
+
+
+<div class="images">
+  <img src="stars.png" alt="stars" class="stars">
+  <img src="mountains1.png" alt="mouuntains" class="mountain-far">
+  <img src="mountains.png" alt="mountains" class="mountain">
+  <div class="city-1"></div>
+  <div class="city-2"></div>
+  <div class="city-3"></div>
+</div>
 
 <div id="name" class="flexbox-horizontal neon-sign-me">
   <h1>Sandra</h1>
@@ -21,11 +31,9 @@
   <h1>:3</h1>
 </div>
 
-<!-- ToDo: import images and comets -->
 <!-- ToDo: add rainbow rain (only pride and trans flag colors :3) -->
-<!-- ToDo: add «:3» -->
 
-<div id="showcase" class="">
+<div id="showcase">
 
 <!-- ToDo: add section about me (personal stuff) -->
 
@@ -128,6 +136,46 @@
 </div>
 
 </div>
+
+<!-- ToDo: add rain & meteors -->
+<!-- this breaks everything :( -->
+<!-- <script>
+  // TODO: consider redoing this with alpine.js
+  function rain() {
+    let amount = 200
+    let body = document.querySelector('body')
+
+    // Generating ${amount} raindrops
+    for (let index = 0; index < amount; index++) {
+      let rain_drop = document.createElement('i')
+      rain_drop.classList.add("drop")
+
+      let size = Math.random() * 3
+      let position_x = Math.floor(Math.random() * window.innerWidth)
+
+      // Generating a random color (and making sure it has a certain lightness)
+      // Only trans & progress flag colors
+      let red = (Math.random() * 245) + 10
+      let green = (Math.random() * 245) + 10
+      let blue = (Math.random() * 245) + 10
+
+      let delay = Math.random() * -20
+      let duration = (Math.random() * 5) + 1.5
+
+      rain_drop.style.width = `${0.2 + size}px`
+      rain_drop.style.left = `${position_x}px`
+      rain_drop.style.position = "absolute"
+      rain_drop.style.zIndex = 7
+      rain_drop.style.backgroundImage = `linear-gradient(transparent, rgb(${red}, ${green}, ${blue}))`
+      rain_drop.style.animationDelay = `${delay}s`
+      rain_drop.style.animationDuration = `${duration}s`
+
+      body.appendChild(rain_drop)
+    }
+  }
+
+  rain()
+</script> -->
 
 </body>
 </html>
